@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — Casa & Ateliê Mãos de Maria</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --gold-pale: #F5EDD4;
+    --cream: #FAF7F2;
+    --brown-deep: #3D2B1F;
+    --brown-mid: #6B4C38;
+    --brown-light: #A07850;
+    --blue-soft: #4A6FA5;
+    --blue-pale: #EEF3FA;
+    --white: #FFFFFF;
+    --gray-100: #F8F5F0;
+    --gray-200: #EDE8E0;
+    --gray-300: #D4CBC0;
+    --gray-500: #9A8F85;
+    --gray-700: #5A5048;
+    --success: #4CAF82;
+    --danger: #E05C5C;
+    --shadow-sm: 0 2px 8px rgba(61,43,31,0.08);
+    --shadow-md: 0 4px 20px rgba(61,43,31,0.12);
+    --shadow-lg: 0 8px 40px rgba(61,43,31,0.16);
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--brown-deep);
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: var(--brown-deep);
+    background-image: linear-gradient(135deg, var(--brown-deep) 0%, #2A1D14 100%);
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  }
+
+  .header-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .header-icon {
+    width: 40px; height: 40px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    border-radius: 10px;
+    display: flex;align-items:center;justify-content:center;
+    font-size: 20px;
+  }
+
+  .header-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.3px;
+  }
+
+  .header-subtitle {
+    font-size: 11px;
+    color: var(--gold-light);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 1px;
+  }
+
+  .header-date {
+    font-size: 12px;
+    color: var(--gray-300);
+    text-align: right;
+  }
+
+  /* ── TABS ── */
+  .tabs-nav {
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-200);
+    padding: 0 32px;
+    display: flex;
+    gap: 0;
+    position: sticky;
+    top: 70px;
+    z-index: 99;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .tab-btn {
+    padding: 18px 28px;
+    border: none;
+    background: transparent;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gray-500);
+    cursor: pointer;
+    position: relative;
+    transition: color 0.2s;
+    display: flex;align-items:center;gap:8px;
+    white-space: nowrap;
+  }
+
+  .tab-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--gold);
+    border-radius: 3px 3px 0 0;
+    transform: scaleX(0);
+    transition: transform 0.25s;
+  }
+
+  .tab-btn.active { color: var(--brown-deep); }
+  .tab-btn.active::after { transform: scaleX(1); }
+  .tab-btn:hover { color: var(--brown-mid); }
+
+  .tab-icon { font-size: 16px; }
+
+  /* ── CONTENT ── */
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  .page { padding: 32px; max-width: 1280px; margin: 0 auto; }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--brown-deep);
+    margin-bottom: 6px;
+    display: flex;align-items:center;gap:10px;
+  }
+
+  .section-sub {
+    font-size: 13px;
+    color: var(--gray-500);
+    margin-bottom: 28px;
+  }
+
+  /* ── CARDS ── */
+  .card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-200);
+  }
+
+  .card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--brown-deep);
+    margin-bottom: 18px;
+    display: flex;align-items:center;gap:8px;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .stat-card {
+    background: var(--white);
+    border-radius: var(--radius-sm);
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-200);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .stat-card::before {
+    content:'';
+    position:absolute;
+    top:0;left:0;right:0;
+    height:3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  }
+
+  .stat-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gray-500);
+    margin-bottom: 8px;
+  }
+
+  .stat-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--brown-deep);
+    line-height: 1;
+  }
+
+  .stat-card.gold::before { background: linear-gradient(90deg, var(--gold), var(--gold-light)); }
+  .stat-card.blue::before { background: linear-gradient(90deg, var(--blue-soft), #6B99D4); }
+  .stat-card.green::before { background: linear-gradient(90deg, var(--success), #72C9A2); }
+  .stat-card.red::before { background: linear-gradient(90deg, var(--danger), #F08080); }
+
+  /* ── FORM ── */
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+
+  .form-label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--gray-700);
+  }
+
+  .form-input, .form-select {
+    padding: 11px 14px;
+    border: 1.5px solid var(--gray-200);
+    border-radius: var(--radius-sm);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--brown-deep);
+    background: var(--gray-100);
+    transition: border-color 0.2s, background 0.2s;
+    outline: none;
+    width: 100%;
+  }
+
+  .form-input:focus, .form-select:focus {
+    border-color: var(--gold);
+    background: var(--white);
+  }
+
+  /* ── BUTTONS ── */
+  .btn {
+    padding: 11px 22px;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;align-items:center;gap:7px;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--brown-deep);
+    box-shadow: 0 2px 10px rgba(201,168,76,0.35);
+  }
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(201,168,76,0.45);
+  }
+
+  .btn-secondary {
+    background: var(--gray-100);
+    color: var(--gray-700);
+    border: 1.5px solid var(--gray-200);
+  }
+  .btn-secondary:hover { background: var(--gray-200); }
+
+  .btn-blue {
+    background: linear-gradient(135deg, var(--blue-soft), #6B99D4);
+    color: white;
+    box-shadow: 0 2px 10px rgba(74,111,165,0.3);
+  }
+  .btn-blue:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(74,111,165,0.4); }
+
+  .btn-danger {
+    background: transparent;
+    color: var(--danger);
+    border: none;
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+  .btn-danger:hover { background: #FEF0F0; border-radius: 6px; }
+
+  .btn-sm { padding: 7px 14px; font-size: 12px; }
+
+  .btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 8px;
+  }
+
+  /* ── TABLE ── */
+  .table-wrap { overflow-x: auto; margin-top: 12px; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+  }
+
+  thead tr {
+    background: var(--gold-pale);
+    border-radius: 10px;
+  }
+
+  th {
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--brown-mid);
+    white-space: nowrap;
+  }
+
+  td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--gray-200);
+    color: var(--brown-deep);
+  }
+
+  tbody tr:hover { background: var(--gray-100); }
+  tbody tr:last-child td { border-bottom: none; }
+
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .badge-eric { background: #EEF3FA; color: var(--blue-soft); }
+  .badge-paty { background: #FEF0F9; color: #C060A0; }
+  .badge-shared { background: var(--gold-pale); color: var(--brown-mid); }
+  .badge-sale { background: #EEFAF3; color: var(--success); }
+  .badge-expense { background: #FEF0F0; color: var(--danger); }
+
+  /* ── LAYOUT GRID ── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  @media (max-width: 900px) {
+    .two-col { grid-template-columns: 1fr; }
+    .page { padding: 16px; }
+    .tabs-nav { padding: 0 16px; overflow-x: auto; }
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px;
+    background: var(--gray-200);
+    margin: 24px 0;
+  }
+
+  /* ── EMPTY STATE ── */
+  .empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--gray-500);
+  }
+
+  .empty-state .empty-icon { font-size: 36px; margin-bottom: 10px; }
+  .empty-state p { font-size: 14px; }
+
+  /* ── TOAST ── */
+  #toast {
+    position: fixed;
+    bottom: 28px; right: 28px;
+    background: var(--brown-deep);
+    color: white;
+    padding: 14px 22px;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 9999;
+    display: flex;align-items:center;gap:10px;
+    box-shadow: var(--shadow-lg);
+    transform: translateY(80px);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(.34,1.56,.64,1);
+  }
+
+  #toast.show { transform: translateY(0); opacity: 1; }
+
+  /* ── FILTER BAR ── */
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: flex-end;
+    padding: 16px;
+    background: var(--gray-100);
+    border-radius: var(--radius-sm);
+    margin-bottom: 18px;
+    border: 1px solid var(--gray-200);
+  }
+
+  .filter-bar .form-group { min-width: 140px; }
+
+  /* ── SUBSECTION ── */
+  .subsection-tabs {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .sub-tab-btn {
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: 1.5px solid var(--gray-200);
+    background: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gray-500);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .sub-tab-btn.active {
+    background: var(--brown-deep);
+    color: white;
+    border-color: var(--brown-deep);
+  }
+
+  .sub-tab-content { display: none; }
+  .sub-tab-content.active { display: block; }
+
+  /* ── VENDA ITENS ── */
+  .venda-item {
+    background: var(--gray-100);
+    border: 1.5px solid var(--gray-200);
+    border-radius: var(--radius-sm);
+    padding: 14px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  .venda-item-remove {
+    position: absolute;
+    top: 10px; right: 10px;
+    background: none; border: none;
+    cursor: pointer; font-size: 18px;
+    color: var(--danger);
+    line-height: 1;
+  }
+
+  /* ── CHART CONTAINER ── */
+  .chart-container {
+    position: relative;
+    height: 240px;
+    margin-top: 8px;
+  }
+
+  /* ── PRICE BUTTONS ── */
+  .price-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 6px;
+  }
+
+  .price-btn {
+    padding: 7px 14px;
+    border: 1.5px solid var(--gray-200);
+    border-radius: 20px;
+    background: white;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--brown-deep);
+    transition: all 0.2s;
+  }
+
+  .price-btn.selected {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--brown-deep);
+    font-weight: 700;
+  }
+
+  .price-btn:hover:not(.selected) { border-color: var(--gold); background: var(--gold-pale); }
+
+  /* ── ORNAMENT ── */
+  .ornament {
+    color: var(--gold);
+    font-size: 16px;
+    opacity: 0.6;
+    margin: 0 4px;
+  }
+
+  /* scrollbar */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--gray-300); border-radius: 10px; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-brand">
+    <div class="header-icon">✦</div>
+    <div>
+      <div class="header-title">Casa & Ateliê Mãos de Maria</div>
+      <div class="header-subtitle">Sistema de Gestão</div>
+    </div>
+  </div>
+  <div class="header-date" id="headerDate"></div>
+</header>
+
+<!-- TABS NAV -->
+<nav class="tabs-nav">
+  <button class="tab-btn active" onclick="switchTab('casa', this)">
+    <span class="tab-icon">🏠</span> Controle da Casa
+  </button>
+  <button class="tab-btn" onclick="switchTab('atelie', this)">
+    <span class="tab-icon">📿</span> Ateliê Mãos de Maria
+  </button>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     ABA 1 — CASA
+═══════════════════════════════════════════ -->
+<div id="tab-casa" class="tab-content active">
+<div class="page">
+
+  <div class="section-title">🏠 Controle de Contas da Casa</div>
+  <div class="section-sub">Organize e divida as despesas mensais da casa entre Eric e Paty</div>
+
+  <!-- Summary Cards -->
+  <div class="stats-grid" id="casa-stats">
+    <div class="stat-card blue">
+      <div class="stat-label">Total Eric</div>
+      <div class="stat-value" id="stat-eric">R$ 0,00</div>
+    </div>
+    <div class="stat-card" style="--c:#C060A0">
+      <div class="stat-label">Total Paty</div>
+      <div class="stat-value" id="stat-paty">R$ 0,00</div>
+      <style>.stat-card:nth-child(2)::before{background:linear-gradient(90deg,#C060A0,#E080C0)}</style>
+    </div>
+    <div class="stat-card gold">
+      <div class="stat-label">Compartilhado</div>
+      <div class="stat-value" id="stat-shared">R$ 0,00</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Total Geral</div>
+      <div class="stat-value" id="stat-total">R$ 0,00</div>
+      <style>.stat-card:nth-child(4)::before{background:linear-gradient(90deg,#6B4C38,#A07850)}</style>
+    </div>
+    <div class="stat-card green">
+      <div class="stat-label">Cada um paga</div>
+      <div class="stat-value" id="stat-each">R$ 0,00</div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <!-- FORM -->
+    <div class="card">
+      <div class="card-title">➕ Adicionar Conta</div>
+      <div class="form-grid" style="grid-template-columns:1fr">
+        <div class="form-group">
+          <label class="form-label">Conta</label>
+          <select class="form-select" id="casa-conta-select" onchange="handleContaSelect(this)">
+            <option value="">Selecione a conta...</option>
+            <optgroup label="Eric">
+              <option value="UNIMED ERIC">UNIMED ERIC</option>
+              <option value="CLARO ERIC">CLARO ERIC</option>
+              <option value="VIVO ERIC">VIVO ERIC</option>
+              <option value="FATURA ERIC">FATURA ERIC</option>
+              <option value="IPVA CARRO">IPVA CARRO</option>
+              <option value="IPVA MOTO">IPVA MOTO</option>
+              <option value="LICENCIAMENTO CARRO">LICENCIAMENTO CARRO</option>
+              <option value="LICENCIAMENTO MOTO">LICENCIAMENTO MOTO</option>
+            </optgroup>
+            <optgroup label="Paty">
+              <option value="UNIMED PATY">UNIMED PATY</option>
+              <option value="CLARO PATY">CLARO PATY</option>
+              <option value="VIVO PATY">VIVO PATY</option>
+              <option value="FATURA PATY">FATURA PATY</option>
+            </optgroup>
+            <optgroup label="Compartilhadas">
+              <option value="ÁGUA">ÁGUA</option>
+              <option value="LUZ">LUZ</option>
+              <option value="INTERNET">INTERNET</option>
+              <option value="FAXINA">FAXINA</option>
+              <option value="IPTU">IPTU</option>
+            </optgroup>
+            <optgroup label="Outros">
+              <option value="EXTRAS">EXTRAS (personalizado)</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="form-group" id="extras-nome-group" style="display:none">
+          <label class="form-label">Nome personalizado</label>
+          <input type="text" class="form-input" id="casa-extras-nome" placeholder="Ex: Academia, Seguro...">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Valor (R$)</label>
+          <input type="number" class="form-input" id="casa-valor" placeholder="0,00" step="0.01" min="0">
+        </div>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-primary" onclick="addCasaConta()">➕ Adicionar Conta</button>
+        <button class="btn btn-secondary" onclick="clearCasaForm()">✕ Limpar</button>
+      </div>
+    </div>
+
+    <!-- Divisão Visual -->
+    <div class="card">
+      <div class="card-title">⚖️ Divisão de Responsabilidade</div>
+      <div id="divisao-visual">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px">
+              <span style="color:var(--blue-soft);font-weight:600">Eric</span>
+              <span id="bar-eric-pct">0%</span>
+            </div>
+            <div style="background:var(--gray-200);border-radius:20px;height:10px;overflow:hidden">
+              <div id="bar-eric" style="height:100%;background:linear-gradient(90deg,var(--blue-soft),#6B99D4);border-radius:20px;width:0%;transition:width 0.5s"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px">
+              <span style="color:#C060A0;font-weight:600">Paty</span>
+              <span id="bar-paty-pct">0%</span>
+            </div>
+            <div style="background:var(--gray-200);border-radius:20px;height:10px;overflow:hidden">
+              <div id="bar-paty" style="height:100%;background:linear-gradient(90deg,#C060A0,#E080C0);border-radius:20px;width:0%;transition:width 0.5s"></div>
+            </div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px">
+              <span style="color:var(--brown-mid);font-weight:600">Compartilhado</span>
+              <span id="bar-shared-pct">0%</span>
+            </div>
+            <div style="background:var(--gray-200);border-radius:20px;height:10px;overflow:hidden">
+              <div id="bar-shared" style="height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-light));border-radius:20px;width:0%;transition:width 0.5s"></div>
+            </div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div style="background:var(--gold-pale);border-radius:10px;padding:16px;text-align:center">
+          <div style="font-size:12px;color:var(--brown-mid);margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;font-weight:600">Cada um paga (Total÷2)</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:var(--brown-deep)" id="divisao-valor">R$ 0,00</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabela -->
+  <div class="card" style="margin-top:20px">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px">
+      <div class="card-title" style="margin-bottom:0">📋 Contas Registradas</div>
+      <div class="btn-row" style="margin-top:0">
+        <button class="btn btn-blue btn-sm" onclick="exportCasaPDF()">📄 Exportar PDF</button>
+        <button class="btn btn-secondary btn-sm" onclick="clearAllCasa()">🗑️ Limpar tudo</button>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table id="casa-table">
+        <thead>
+          <tr>
+            <th>Conta</th>
+            <th>Categoria</th>
+            <th>Valor</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody id="casa-tbody">
+          <tr><td colspan="4"><div class="empty-state"><div class="empty-icon">📋</div><p>Nenhuma conta registrada ainda</p></div></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     ABA 2 — ATELIÊ
+═══════════════════════════════════════════ -->
+<div id="tab-atelie" class="tab-content">
+<div class="page">
+
+  <div class="section-title">📿 Ateliê Mãos de Maria</div>
+  <div class="section-sub">Gestão de vendas, gastos e clientes do ateliê</div>
+
+  <!-- Stats Ateliê -->
+  <div class="stats-grid">
+    <div class="stat-card green">
+      <div class="stat-label">Total Vendas</div>
+      <div class="stat-value" id="at-stat-vendas">R$ 0,00</div>
+    </div>
+    <div class="stat-card red">
+      <div class="stat-label">Total Gastos</div>
+      <div class="stat-value" id="at-stat-gastos">R$ 0,00</div>
+    </div>
+    <div class="stat-card gold">
+      <div class="stat-label">Lucro</div>
+      <div class="stat-value" id="at-stat-lucro">R$ 0,00</div>
+    </div>
+    <div class="stat-card blue">
+      <div class="stat-label">Nº de Vendas</div>
+      <div class="stat-value" id="at-stat-num">0</div>
+    </div>
+  </div>
+
+  <!-- Sub tabs -->
+  <div class="subsection-tabs">
+    <button class="sub-tab-btn active" onclick="switchSubTab('vendas', this)">🛍️ Nova Venda</button>
+    <button class="sub-tab-btn" onclick="switchSubTab('gastos', this)">💸 Registrar Gasto</button>
+    <button class="sub-tab-btn" onclick="switchSubTab('historico', this)">📜 Histórico</button>
+    <button class="sub-tab-btn" onclick="switchSubTab('relatorio', this)">📊 Relatórios</button>
+    <button class="sub-tab-btn" onclick="switchSubTab('clientes', this)">👥 Clientes</button>
+  </div>
+
+  <!-- SUB: VENDAS -->
+  <div id="sub-vendas" class="sub-tab-content active">
+    <div class="two-col">
+      <div class="card">
+        <div class="card-title">👤 Dados do Cliente</div>
+        <div class="form-grid" style="grid-template-columns:1fr">
+          <div class="form-group">
+            <label class="form-label">Nome do Cliente *</label>
+            <input type="text" class="form-input" id="venda-cliente" placeholder="Nome completo">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Telefone</label>
+            <input type="text" class="form-input" id="venda-tel" placeholder="(16) 99999-9999">
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">📿 Itens da Venda</div>
+        <div id="venda-itens-list"></div>
+        <button class="btn btn-secondary btn-sm" onclick="addVendaItem()" style="margin-top:8px">➕ Adicionar modelo</button>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+        <div>
+          <div style="font-size:13px;color:var(--gray-500)">Total da venda</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:var(--brown-deep)" id="venda-total-display">R$ 0,00</div>
+        </div>
+        <div class="btn-row" style="margin-top:0">
+          <button class="btn btn-primary" onclick="saveVenda()">💾 Registrar Venda</button>
+          <button class="btn btn-secondary" onclick="clearVendaForm()">✕ Limpar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUB: GASTOS -->
+  <div id="sub-gastos" class="sub-tab-content">
+    <div class="card" style="max-width:480px">
+      <div class="card-title">💸 Registrar Gasto</div>
+      <div class="form-grid" style="grid-template-columns:1fr">
+        <div class="form-group">
+          <label class="form-label">Categoria</label>
+          <select class="form-select" id="gasto-cat">
+            <option value="SHOPPE">SHOPPE</option>
+            <option value="LOJA MOCOCA">LOJA MOCOCA</option>
+            <option value="MERCADO LIVRE">MERCADO LIVRE</option>
+            <option value="OUTROS">OUTROS</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Descrição</label>
+          <input type="text" class="form-input" id="gasto-desc" placeholder="Descreva o gasto...">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Valor (R$)</label>
+          <input type="number" class="form-input" id="gasto-valor" placeholder="0,00" step="0.01" min="0">
+        </div>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-primary" onclick="saveGasto()">➕ Adicionar Gasto</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUB: HISTÓRICO -->
+  <div id="sub-historico" class="sub-tab-content">
+    <div class="filter-bar">
+      <div class="form-group">
+        <label class="form-label">Filtrar por</label>
+        <select class="form-select" id="hist-filtro-tipo" onchange="applyFilter()">
+          <option value="todos">Todos</option>
+          <option value="mes">Mês</option>
+          <option value="periodo">Período</option>
+        </select>
+      </div>
+      <div class="form-group" id="hist-mes-group">
+        <label class="form-label">Mês/Ano</label>
+        <input type="month" class="form-input" id="hist-mes" onchange="applyFilter()">
+      </div>
+      <div class="form-group" id="hist-de-group" style="display:none">
+        <label class="form-label">De</label>
+        <input type="date" class="form-input" id="hist-de" onchange="applyFilter()">
+      </div>
+      <div class="form-group" id="hist-ate-group" style="display:none">
+        <label class="form-label">Até</label>
+        <input type="date" class="form-input" id="hist-ate" onchange="applyFilter()">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Tipo</label>
+        <select class="form-select" id="hist-tipo" onchange="applyFilter()">
+          <option value="ambos">Vendas e Gastos</option>
+          <option value="vendas">Só Vendas</option>
+          <option value="gastos">Só Gastos</option>
+        </select>
+      </div>
+      <button class="btn btn-secondary btn-sm" onclick="clearFilter()">✕ Limpar filtro</button>
+    </div>
+
+    <div class="card" style="margin-bottom:16px">
+      <div class="card-title">🛍️ Vendas</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Data</th><th>Cliente</th><th>Telefone</th><th>Modelos</th><th>Total</th><th></th>
+            </tr>
+          </thead>
+          <tbody id="hist-vendas-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">💸 Gastos</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Data</th><th>Categoria</th><th>Descrição</th><th>Valor</th><th></th>
+            </tr>
+          </thead>
+          <tbody id="hist-gastos-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUB: RELATÓRIO -->
+  <div id="sub-relatorio" class="sub-tab-content">
+    <div class="two-col">
+      <div class="card">
+        <div class="card-title">📊 Vendas por Mês</div>
+        <div class="chart-container">
+          <canvas id="chart-vendas"></canvas>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">🏷️ Gastos por Categoria</div>
+        <div class="chart-container">
+          <canvas id="chart-gastos"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="card" style="margin-top:20px">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:16px">
+        <div class="card-title" style="margin-bottom:0">📈 Resumo Geral</div>
+        <div class="btn-row" style="margin-top:0">
+          <button class="btn btn-blue btn-sm" onclick="exportAteliePDF()">📄 Exportar Relatório PDF</button>
+        </div>
+      </div>
+      <div id="relatorio-resumo"></div>
+    </div>
+  </div>
+
+  <!-- SUB: CLIENTES -->
+  <div id="sub-clientes" class="sub-tab-content">
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:16px">
+        <div class="card-title" style="margin-bottom:0">👥 Lista de Clientes</div>
+        <button class="btn btn-blue btn-sm" onclick="exportClientesPDF()">📄 Exportar Clientes PDF</button>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Cliente</th><th>Telefone</th><th>Compras</th><th>Total Gasto</th><th>Última Compra</th>
+            </tr>
+          </thead>
+          <tbody id="clientes-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<script>
+// ═══════════════════════════════════════════
+//  UTILS
+// ═══════════════════════════════════════════
+const fmt = v => 'R$ ' + parseFloat(v||0).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
+const today = () => new Date().toISOString().split('T')[0];
+const fmtDate = d => d ? new Date(d+'T12:00:00').toLocaleDateString('pt-BR') : '';
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2);
+
+function toast(msg, emoji='✓') {
+  const t = document.getElementById('toast');
+  t.innerHTML = `<span>${emoji}</span> ${msg}`;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), 3000);
+}
+
+function switchTab(name, btn) {
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+name).classList.add('active');
+  btn.classList.add('active');
+  if(name==='atelie') { renderRelatorio(); renderClientes(); }
+}
+
+function switchSubTab(name, btn) {
+  document.querySelectorAll('.sub-tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.sub-tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('sub-'+name).classList.add('active');
+  btn.classList.add('active');
+  if(name==='historico') renderHistorico();
+  if(name==='relatorio') { renderRelatorio(); setTimeout(drawCharts,100); }
+  if(name==='clientes') renderClientes();
+}
+
+// Header date
+const d = new Date();
+document.getElementById('headerDate').innerHTML =
+  d.toLocaleDateString('pt-BR',{weekday:'long',day:'2-digit',month:'long',year:'numeric'});
+
+// ═══════════════════════════════════════════
+//  CASA — DATA
+// ═══════════════════════════════════════════
+let casaContas = JSON.parse(localStorage.getItem('casaContas')||'[]');
+
+function saveCasa() { localStorage.setItem('casaContas', JSON.stringify(casaContas)); }
+
+function handleContaSelect(sel) {
+  document.getElementById('extras-nome-group').style.display =
+    sel.value === 'EXTRAS' ? 'block' : 'none';
+}
+
+function clearCasaForm() {
+  document.getElementById('casa-conta-select').value = '';
+  document.getElementById('casa-valor').value = '';
+  document.getElementById('casa-extras-nome').value = '';
+  document.getElementById('extras-nome-group').style.display = 'none';
+}
+
+function addCasaConta() {
+  let conta = document.getElementById('casa-conta-select').value;
+  const valor = parseFloat(document.getElementById('casa-valor').value);
+  if (!conta) { toast('Selecione uma conta', '⚠️'); return; }
+  if (conta === 'EXTRAS') {
+    const nome = document.getElementById('casa-extras-nome').value.trim();
+    if (!nome) { toast('Digite o nome do extra', '⚠️'); return; }
+    conta = nome.toUpperCase();
+  }
+  if (!valor || valor <= 0) { toast('Digite um valor válido', '⚠️'); return; }
+  casaContas.push({ id: uid(), conta, valor });
+  saveCasa(); renderCasaTable(); updateCasaStats(); clearCasaForm();
+  toast('Conta adicionada!', '✓');
+}
+
+function removeCasaConta(id) {
+  casaContas = casaContas.filter(c=>c.id!==id);
+  saveCasa(); renderCasaTable(); updateCasaStats();
+  toast('Conta removida', '🗑️');
+}
+
+function clearAllCasa() {
+  if (!confirm('Limpar todas as contas?')) return;
+  casaContas = []; saveCasa(); renderCasaTable(); updateCasaStats();
+}
+
+function getCategoria(conta) {
+  const u = conta.toUpperCase();
+  if (u.includes('ERIC')) return 'eric';
+  if (u.includes('PATY')) return 'paty';
+  return 'shared';
+}
+
+function renderCasaTable() {
+  const tbody = document.getElementById('casa-tbody');
+  if (!casaContas.length) {
+    tbody.innerHTML = '<tr><td colspan="4"><div class="empty-state"><div class="empty-icon">📋</div><p>Nenhuma conta registrada ainda</p></div></td></tr>';
+    return;
+  }
+  tbody.innerHTML = casaContas.map(c => {
+    const cat = getCategoria(c.conta);
+    const badge = cat==='eric'?'badge-eric':cat==='paty'?'badge-paty':'badge-shared';
+    const label = cat==='eric'?'Eric':cat==='paty'?'Paty':'Compartilhada';
+    return `<tr>
+      <td><strong>${c.conta}</strong></td>
+      <td><span class="badge ${badge}">${label}</span></td>
+      <td>${fmt(c.valor)}</td>
+      <td><button class="btn btn-danger btn-sm" onclick="removeCasaConta('${c.id}')">🗑️</button></td>
+    </tr>`;
+  }).join('');
+}
+
+function updateCasaStats() {
+  let eric=0, paty=0, shared=0;
+  casaContas.forEach(c => {
+    const cat = getCategoria(c.conta);
+    if(cat==='eric') eric+=c.valor;
+    else if(cat==='paty') paty+=c.valor;
+    else shared+=c.valor;
+  });
+  const total = eric+paty+shared;
+  const each = total/2;
+  document.getElementById('stat-eric').textContent = fmt(eric);
+  document.getElementById('stat-paty').textContent = fmt(paty);
+  document.getElementById('stat-shared').textContent = fmt(shared);
+  document.getElementById('stat-total').textContent = fmt(total);
+  document.getElementById('stat-each').textContent = fmt(each);
+  document.getElementById('divisao-valor').textContent = fmt(each);
+  const pct = v => total>0 ? Math.round(v/total*100) : 0;
+  document.getElementById('bar-eric').style.width = pct(eric)+'%';
+  document.getElementById('bar-paty').style.width = pct(paty)+'%';
+  document.getElementById('bar-shared').style.width = pct(shared)+'%';
+  document.getElementById('bar-eric-pct').textContent = pct(eric)+'%';
+  document.getElementById('bar-paty-pct').textContent = pct(paty)+'%';
+  document.getElementById('bar-shared-pct').textContent = pct(shared)+'%';
+}
+
+function exportCasaPDF() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+  doc.setFont('helvetica','bold');
+  doc.setFontSize(18); doc.text('Controle de Contas da Casa', 14, 20);
+  doc.setFontSize(11); doc.setFont('helvetica','normal');
+  doc.text('Gerado em: ' + new Date().toLocaleDateString('pt-BR'), 14, 28);
+  let eric=0,paty=0,shared=0;
+  const rows = casaContas.map(c => {
+    const cat=getCategoria(c.conta);
+    if(cat==='eric')eric+=c.valor;
+    else if(cat==='paty')paty+=c.valor;
+    else shared+=c.valor;
+    return [c.conta, cat==='eric'?'Eric':cat==='paty'?'Paty':'Compartilhada', fmt(c.valor)];
+  });
+  doc.autoTable({
+    startY: 34,
+    head:[['Conta','Categoria','Valor']],
+    body: rows,
+    styles:{fontSize:10},
+    headStyles:{fillColor:[61,43,31]},
+  });
+  const y = doc.lastAutoTable.finalY + 14;
+  const total=eric+paty+shared;
+  doc.setFont('helvetica','bold');
+  doc.text('Resumo:', 14, y);
+  doc.setFont('helvetica','normal');
+  doc.text(`Total Eric: ${fmt(eric)}`, 14, y+8);
+  doc.text(`Total Paty: ${fmt(paty)}`, 14, y+16);
+  doc.text(`Compartilhado: ${fmt(shared)}`, 14, y+24);
+  doc.text(`Total Geral: ${fmt(total)}`, 14, y+32);
+  doc.setFont('helvetica','bold');
+  doc.text(`Cada um paga: ${fmt(total/2)}`, 14, y+42);
+  doc.save('contas-casa.pdf');
+  toast('PDF exportado!', '📄');
+}
+
+// ═══════════════════════════════════════════
+//  ATELIÊ — DATA
+// ═══════════════════════════════════════════
+let vendas = JSON.parse(localStorage.getItem('atVendas')||'[]');
+let gastos = JSON.parse(localStorage.getItem('atGastos')||'[]');
+let vendaItems = [];
+
+function saveAtelie() {
+  localStorage.setItem('atVendas', JSON.stringify(vendas));
+  localStorage.setItem('atGastos', JSON.stringify(gastos));
+}
+
+function updateAtStats() {
+  const tv = vendas.reduce((s,v)=>s+v.total,0);
+  const tg = gastos.reduce((s,g)=>s+g.valor,0);
+  document.getElementById('at-stat-vendas').textContent = fmt(tv);
+  document.getElementById('at-stat-gastos').textContent = fmt(tg);
+  document.getElementById('at-stat-lucro').textContent = fmt(tv-tg);
+  document.getElementById('at-stat-num').textContent = vendas.length;
+}
+
+// ── Venda Items ──
+const PRECOS = [15,20,25,30,35,40,45];
+
+function addVendaItem() {
+  const id = 'vi_'+uid();
+  vendaItems.push({ id, modelo:'', valor:0, qty:1, customVal:false });
+  renderVendaItems();
+}
+
+function removeVendaItem(id) {
+  vendaItems = vendaItems.filter(i=>i.id!==id);
+  renderVendaItems();
+}
+
+function renderVendaItems() {
+  const list = document.getElementById('venda-itens-list');
+  if (!vendaItems.length) {
+    list.innerHTML = '<div class="empty-state" style="padding:20px"><p>Clique em \'Adicionar modelo\' para incluir itens</p></div>';
+    updateVendaTotal(); return;
+  }
+  list.innerHTML = vendaItems.map(item => `
+    <div class="venda-item" id="item-${item.id}">
+      <button class="venda-item-remove" onclick="removeVendaItem('${item.id}')">✕</button>
+      <div class="form-grid" style="grid-template-columns:1fr;gap:10px">
+        <div class="form-group">
+          <label class="form-label">Modelo do terço</label>
+          <input type="text" class="form-input" value="${item.modelo}"
+            oninput="setItemField('${item.id}','modelo',this.value)"
+            placeholder="Ex: Terço de madeira, Terço de cristal...">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Valor</label>
+          <div class="price-grid" id="prices-${item.id}">
+            ${PRECOS.map(p=>`<button class="price-btn ${item.valor===p&&!item.customVal?'selected':''}"
+              onclick="setItemPrice('${item.id}',${p})">R$${p}</button>`).join('')}
+            <button class="price-btn ${item.customVal?'selected':''}"
+              onclick="toggleCustomPrice('${item.id}')">Outro</button>
+          </div>
+          ${item.customVal ? `<input type="number" class="form-input" style="margin-top:8px"
+            value="${item.valor||''}" placeholder="Valor personalizado"
+            oninput="setItemField('${item.id}','valor',parseFloat(this.value)||0)">` : ''}
+        </div>
+        <div class="form-group">
+          <label class="form-label">Quantidade</label>
+          <input type="number" class="form-input" value="${item.qty}" min="1"
+            oninput="setItemField('${item.id}','qty',parseInt(this.value)||1)">
+        </div>
+        <div style="font-size:13px;color:var(--gray-500)">
+          Subtotal: <strong>${fmt((item.valor||0)*(item.qty||1))}</strong>
+        </div>
+      </div>
+    </div>
+  `).join('');
+  updateVendaTotal();
+}
+
+function setItemField(id, field, val) {
+  const item = vendaItems.find(i=>i.id===id);
+  if(item) { item[field]=val; updateVendaTotal(); }
+}
+
+function setItemPrice(id, price) {
+  const item = vendaItems.find(i=>i.id===id);
+  if(item) { item.valor=price; item.customVal=false; renderVendaItems(); }
+}
+
+function toggleCustomPrice(id) {
+  const item = vendaItems.find(i=>i.id===id);
+  if(item) { item.customVal=!item.customVal; if(!item.customVal)item.valor=0; renderVendaItems(); }
+}
+
+function updateVendaTotal() {
+  const total = vendaItems.reduce((s,i)=>s+(i.valor||0)*(i.qty||1),0);
+  document.getElementById('venda-total-display').textContent = fmt(total);
+}
+
+function saveVenda() {
+  const cliente = document.getElementById('venda-cliente').value.trim();
+  const tel = document.getElementById('venda-tel').value.trim();
+  if (!cliente) { toast('Informe o nome do cliente', '⚠️'); return; }
+  if (!vendaItems.length) { toast('Adicione pelo menos um item', '⚠️'); return; }
+  const invalid = vendaItems.find(i=>!i.modelo||!i.valor);
+  if (invalid) { toast('Preencha modelo e valor de todos os itens', '⚠️'); return; }
+  const total = vendaItems.reduce((s,i)=>s+(i.valor||0)*(i.qty||1),0);
+  vendas.push({
+    id: uid(),
+    data: today(),
+    cliente, tel,
+    itens: vendaItems.map(i=>({modelo:i.modelo,valor:i.valor,qty:i.qty})),
+    total
+  });
+  saveAtelie(); updateAtStats(); clearVendaForm();
+  toast('Venda registrada!', '🛍️');
+}
+
+function clearVendaForm() {
+  document.getElementById('venda-cliente').value='';
+  document.getElementById('venda-tel').value='';
+  vendaItems=[];
+  renderVendaItems();
+}
+
+function saveGasto() {
+  const cat = document.getElementById('gasto-cat').value;
+  const desc = document.getElementById('gasto-desc').value.trim();
+  const valor = parseFloat(document.getElementById('gasto-valor').value);
+  if (!valor||valor<=0) { toast('Digite um valor válido','⚠️'); return; }
+  gastos.push({ id:uid(), data:today(), cat, desc, valor });
+  saveAtelie(); updateAtStats();
+  document.getElementById('gasto-desc').value='';
+  document.getElementById('gasto-valor').value='';
+  toast('Gasto registrado!','💸');
+}
+
+function removeVenda(id) {
+  vendas = vendas.filter(v=>v.id!==id);
+  saveAtelie(); updateAtStats(); renderHistorico();
+}
+
+function removeGasto(id) {
+  gastos = gastos.filter(g=>g.id!==id);
+  saveAtelie(); updateAtStats(); renderHistorico();
+}
+
+// ── Histórico ──
+function clearFilter() {
+  document.getElementById('hist-filtro-tipo').value='todos';
+  document.getElementById('hist-mes').value='';
+  document.getElementById('hist-de').value='';
+  document.getElementById('hist-ate').value='';
+  document.getElementById('hist-tipo').value='ambos';
+  document.getElementById('hist-mes-group').style.display='block';
+  document.getElementById('hist-de-group').style.display='none';
+  document.getElementById('hist-ate-group').style.display='none';
+  renderHistorico();
+}
+
+function applyFilter() {
+  const tipo = document.getElementById('hist-filtro-tipo').value;
+  document.getElementById('hist-mes-group').style.display = tipo==='mes'?'block':'none';
+  document.getElementById('hist-de-group').style.display = tipo==='periodo'?'block':'none';
+  document.getElementById('hist-ate-group').style.display = tipo==='periodo'?'block':'none';
+  renderHistorico();
+}
+
+function filterByDate(list, field) {
+  const tipo = document.getElementById('hist-filtro-tipo').value;
+  if (tipo==='mes') {
+    const mes = document.getElementById('hist-mes').value;
+    if (!mes) return list;
+    return list.filter(i=>i[field]&&i[field].startsWith(mes));
+  }
+  if (tipo==='periodo') {
+    const de = document.getElementById('hist-de').value;
+    const ate = document.getElementById('hist-ate').value;
+    return list.filter(i=> (!de||i[field]>=de) && (!ate||i[field]<=ate));
+  }
+  return list;
+}
+
+function renderHistorico() {
+  const tipoFilter = document.getElementById('hist-tipo').value;
+  const showVendas = tipoFilter!=='gastos';
+  const showGastos = tipoFilter!=='vendas';
+
+  const filtVendas = filterByDate(vendas,'data');
+  const filtGastos = filterByDate(gastos,'data');
+
+  const vtbody = document.getElementById('hist-vendas-tbody');
+  if (!showVendas || !filtVendas.length) {
+    vtbody.innerHTML='<tr><td colspan="6"><div class="empty-state"><div class="empty-icon">🛍️</div><p>Nenhuma venda encontrada</p></div></td></tr>';
+  } else {
+    vtbody.innerHTML = [...filtVendas].reverse().map(v=>`<tr>
+      <td>${fmtDate(v.data)}</td>
+      <td><strong>${v.cliente}</strong></td>
+      <td>${v.tel||'-'}</td>
+      <td style="font-size:12px">${v.itens.map(i=>`${i.modelo} ×${i.qty}`).join(', ')}</td>
+      <td><strong style="color:var(--success)">${fmt(v.total)}</strong></td>
+      <td><button class="btn btn-danger btn-sm" onclick="removeVenda('${v.id}')">🗑️</button></td>
+    </tr>`).join('');
+  }
+
+  const gtbody = document.getElementById('hist-gastos-tbody');
+  if (!showGastos || !filtGastos.length) {
+    gtbody.innerHTML='<tr><td colspan="5"><div class="empty-state"><div class="empty-icon">💸</div><p>Nenhum gasto encontrado</p></div></td></tr>';
+  } else {
+    gtbody.innerHTML = [...filtGastos].reverse().map(g=>`<tr>
+      <td>${fmtDate(g.data)}</td>
+      <td><span class="badge badge-expense">${g.cat}</span></td>
+      <td>${g.desc||'-'}</td>
+      <td><strong style="color:var(--danger)">${fmt(g.valor)}</strong></td>
+      <td><button class="btn btn-danger btn-sm" onclick="removeGasto('${g.id}')">🗑️</button></td>
+    </tr>`).join('');
+  }
+}
+
+// ── Relatório ──
+let chartVendas = null, chartGastos = null;
+
+function drawCharts() {
+  // Vendas por mês
+  const byMonth = {};
+  vendas.forEach(v => {
+    const m = v.data.slice(0,7);
+    byMonth[m] = (byMonth[m]||0) + v.total;
+  });
+  const months = Object.keys(byMonth).sort().slice(-6);
+  const monthLabels = months.map(m => {
+    const [y,mo] = m.split('-');
+    return new Date(y,mo-1).toLocaleDateString('pt-BR',{month:'short',year:'2-digit'});
+  });
+
+  const ctx1 = document.getElementById('chart-vendas').getContext('2d');
+  if(chartVendas) chartVendas.destroy();
+  chartVendas = new Chart(ctx1, {
+    type:'bar',
+    data:{
+      labels: monthLabels,
+      datasets:[{ label:'Vendas', data: months.map(m=>byMonth[m]),
+        backgroundColor:'rgba(201,168,76,0.7)', borderColor:'#C9A84C',
+        borderWidth:2, borderRadius:6 }]
+    },
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false}},
+      scales:{y:{beginAtZero:true,ticks:{callback:v=>'R$'+v}}}}
+  });
+
+  // Gastos por categoria
+  const byCat={};
+  gastos.forEach(g=>{byCat[g.cat]=(byCat[g.cat]||0)+g.valor;});
+  const ctx2 = document.getElementById('chart-gastos').getContext('2d');
+  if(chartGastos) chartGastos.destroy();
+  chartGastos = new Chart(ctx2, {
+    type:'doughnut',
+    data:{
+      labels: Object.keys(byCat),
+      datasets:[{data:Object.values(byCat),
+        backgroundColor:['#C9A84C','#4A6FA5','#4CAF82','#E05C5C','#A07850'],
+        borderWidth:2, borderColor:'#fff'}]
+    },
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{position:'bottom',labels:{font:{size:11}}}}}
+  });
+}
+
+function renderRelatorio() {
+  const tv = vendas.reduce((s,v)=>s+v.total,0);
+  const tg = gastos.reduce((s,g)=>s+g.valor,0);
+  const lucro = tv-tg;
+  const el = document.getElementById('relatorio-resumo');
+  el.innerHTML = `
+    <div class="stats-grid" style="margin-bottom:0">
+      <div class="stat-card green">
+        <div class="stat-label">Total Vendas</div>
+        <div class="stat-value">${fmt(tv)}</div>
+        <div style="font-size:11px;color:var(--gray-500);margin-top:4px">${vendas.length} venda(s)</div>
+      </div>
+      <div class="stat-card red">
+        <div class="stat-label">Total Gastos</div>
+        <div class="stat-value">${fmt(tg)}</div>
+        <div style="font-size:11px;color:var(--gray-500);margin-top:4px">${gastos.length} gasto(s)</div>
+      </div>
+      <div class="stat-card ${lucro>=0?'green':'red'}">
+        <div class="stat-label">Lucro</div>
+        <div class="stat-value" style="color:${lucro>=0?'var(--success)':'var(--danger)'}">${fmt(lucro)}</div>
+        <div style="font-size:11px;color:var(--gray-500);margin-top:4px">${tv>0?Math.round(lucro/tv*100):0}% margem</div>
+      </div>
+    </div>`;
+}
+
+function renderClientes() {
+  const map = {};
+  vendas.forEach(v=>{
+    if(!map[v.cliente]) map[v.cliente]={cliente:v.cliente,tel:v.tel,compras:0,total:0,ultima:v.data};
+    map[v.cliente].compras++;
+    map[v.cliente].total+=v.total;
+    if(v.data>map[v.cliente].ultima) map[v.cliente].ultima=v.data;
+    if(v.tel&&!map[v.cliente].tel) map[v.cliente].tel=v.tel;
+  });
+  const list = Object.values(map).sort((a,b)=>b.total-a.total);
+  const tbody = document.getElementById('clientes-tbody');
+  if(!list.length){
+    tbody.innerHTML='<tr><td colspan="5"><div class="empty-state"><div class="empty-icon">👥</div><p>Nenhum cliente ainda</p></div></td></tr>';
+    return;
+  }
+  tbody.innerHTML = list.map(c=>`<tr>
+    <td><strong>${c.cliente}</strong></td>
+    <td>${c.tel||'-'}</td>
+    <td>${c.compras}</td>
+    <td><strong style="color:var(--success)">${fmt(c.total)}</strong></td>
+    <td>${fmtDate(c.ultima)}</td>
+  </tr>`).join('');
+}
+
+// ── PDF Ateliê ──
+function exportAteliePDF() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+  doc.setFont('helvetica','bold');
+  doc.setFontSize(18); doc.text('Relatório — Ateliê Mãos de Maria', 14, 20);
+  doc.setFontSize(11); doc.setFont('helvetica','normal');
+  doc.text('Gerado em: '+new Date().toLocaleDateString('pt-BR'), 14, 28);
+  const tv=vendas.reduce((s,v)=>s+v.total,0);
+  const tg=gastos.reduce((s,g)=>s+g.valor,0);
+  doc.setFont('helvetica','bold'); doc.setFontSize(13);
+  doc.text('Resumo Financeiro', 14, 38);
+  doc.setFont('helvetica','normal'); doc.setFontSize(11);
+  doc.text(`Total de Vendas: ${fmt(tv)}`, 14, 46);
+  doc.text(`Total de Gastos: ${fmt(tg)}`, 14, 54);
+  doc.text(`Lucro: ${fmt(tv-tg)}`, 14, 62);
+
+  if(vendas.length) {
+    doc.setFont('helvetica','bold'); doc.setFontSize(13);
+    doc.text('Vendas', 14, 74);
+    doc.autoTable({
+      startY:78,
+      head:[['Data','Cliente','Modelos','Total']],
+      body: vendas.map(v=>[fmtDate(v.data),v.cliente,v.itens.map(i=>i.modelo+' ×'+i.qty).join(', '),fmt(v.total)]),
+      styles:{fontSize:9},headStyles:{fillColor:[61,43,31]},
+    });
+  }
+  if(gastos.length) {
+    const y2 = doc.lastAutoTable ? doc.lastAutoTable.finalY+12 : 78;
+    doc.setFont('helvetica','bold'); doc.setFontSize(13);
+    doc.text('Gastos', 14, y2);
+    doc.autoTable({
+      startY:y2+4,
+      head:[['Data','Categoria','Descrição','Valor']],
+      body: gastos.map(g=>[fmtDate(g.data),g.cat,g.desc||'-',fmt(g.valor)]),
+      styles:{fontSize:9},headStyles:{fillColor:[224,92,92]},
+    });
+  }
+  doc.save('relatorio-atelie.pdf');
+  toast('Relatório exportado!','📄');
+}
+
+function exportClientesPDF() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+  doc.setFont('helvetica','bold');
+  doc.setFontSize(18); doc.text('Clientes — Ateliê Mãos de Maria', 14, 20);
+  doc.setFontSize(11); doc.setFont('helvetica','normal');
+  doc.text('Gerado em: '+new Date().toLocaleDateString('pt-BR'), 14, 28);
+  const map = {};
+  vendas.forEach(v=>{
+    if(!map[v.cliente]) map[v.cliente]={cliente:v.cliente,tel:v.tel||'-',modelos:[],datas:[]};
+    v.itens.forEach(i=>map[v.cliente].modelos.push(i.modelo));
+    map[v.cliente].datas.push(fmtDate(v.data));
+    if(v.tel&&map[v.cliente].tel==='-') map[v.cliente].tel=v.tel;
+  });
+  const rows = Object.values(map).map(c=>[c.cliente,c.tel,[...new Set(c.modelos)].join(', '),c.datas.join(', ')]);
+  doc.autoTable({
+    startY:34,
+    head:[['Nome','Telefone','Modelos','Datas de Compra']],
+    body: rows,
+    styles:{fontSize:9},headStyles:{fillColor:[61,43,31]},
+    columnStyles:{0:{cellWidth:40},1:{cellWidth:30},2:{cellWidth:60},3:{cellWidth:50}},
+  });
+  doc.save('clientes-atelie.pdf');
+  toast('Lista de clientes exportada!','👥');
+}
+
+// ── INIT ──
+renderCasaTable();
+updateCasaStats();
+updateAtStats();
+addVendaItem(); // start with one item
+// Set default month filter
+const now = new Date();
+document.getElementById('hist-mes').value = now.toISOString().slice(0,7);
+</script>
+</body>
+</html>
