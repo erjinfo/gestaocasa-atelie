@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-07T11:59:43.084Z",
+  "salvoEm": "2026-03-07T12:00:00.399Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -53,6 +53,20 @@
         }
       ],
       "total": 35
+    },
+    {
+      "id": "mmg9tz47vpwj47hp4ji",
+      "data": "2026-03-07",
+      "cliente": "Margareth (Barreto)",
+      "tel": "",
+      "itens": [
+        {
+          "modelo": "Terço Rosa Compacto",
+          "valor": 15,
+          "qty": 1
+        }
+      ],
+      "total": 15
     }
   ],
   "gastos": [],
