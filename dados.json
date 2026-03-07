@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-07T19:19:01.923Z",
+  "salvoEm": "2026-03-07T19:19:57.997Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -330,6 +330,20 @@
         }
       ],
       "total": 30
+    },
+    {
+      "id": "mmgpjrmpwoz02an4a1g",
+      "data": "2026-03-07",
+      "cliente": "Ana Cláudia",
+      "tel": "19992343328",
+      "itens": [
+        {
+          "modelo": "Terço verde Santa Luzia ",
+          "valor": 35,
+          "qty": 1
+        }
+      ],
+      "total": 35
     }
   ],
   "gastos": [
