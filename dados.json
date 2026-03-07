@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-07T12:06:43.545Z",
+  "salvoEm": "2026-03-07T12:09:12.833Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -271,6 +271,14 @@
       "total": 55
     }
   ],
-  "gastos": [],
+  "gastos": [
+    {
+      "id": "mmga5tdb1ndcrvx5t5d",
+      "data": "2026-03-07",
+      "cat": "LOJA MOCOCA",
+      "desc": "kilomania",
+      "valor": 56
+    }
+  ],
   "casaContas": []
 }
