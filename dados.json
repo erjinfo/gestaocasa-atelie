@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-07T12:11:26.224Z",
+  "salvoEm": "2026-03-07T12:11:41.935Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -418,6 +418,27 @@
       "cat": "LOJA MOCOCA",
       "desc": "kilomania",
       "valor": 43.9
+    },
+    {
+      "id": "mmga8tly2hs66zurc4v",
+      "data": "2026-03-07",
+      "cat": "SHOPPE",
+      "desc": "",
+      "valor": 54.55
+    },
+    {
+      "id": "mmga8wovcy0kye5w6",
+      "data": "2026-03-07",
+      "cat": "SHOPPE",
+      "desc": "",
+      "valor": 26.74
+    },
+    {
+      "id": "mmga90f3t2gs9hvj1en",
+      "data": "2026-03-07",
+      "cat": "SHOPPE",
+      "desc": "",
+      "valor": 23.78
     }
   ],
   "casaContas": []
