@@ -755,6 +755,7 @@
     <button class="sub-tab-btn" onclick="switchSubTab('historico', this)">📜 Histórico</button>
     <button class="sub-tab-btn" onclick="switchSubTab('relatorio', this)">📊 Relatórios</button>
     <button class="sub-tab-btn" onclick="switchSubTab('clientes', this)">👥 Clientes</button>
+    <button class="sub-tab-btn" onclick="switchSubTab('backup', this)">💾 Backup</button>
   </div>
 
   <!-- SUB: VENDAS -->
@@ -934,6 +935,115 @@
     </div>
   </div>
 
+  <!-- SUB: BACKUP -->
+  <div id="sub-backup" class="sub-tab-content">
+
+    <!-- TOKEN CONFIG -->
+    <div id="token-config-card" class="card" style="margin-bottom:20px;border:2px solid var(--gold);display:none">
+      <div class="card-title">🔑 Configurar Token do GitHub</div>
+      <p style="font-size:13px;color:var(--gray-700);line-height:1.6;margin-bottom:14px">
+        Para sincronizar os dados, você precisa informar seu <strong>Personal Access Token</strong> do GitHub.<br>
+        Ele fica salvo <strong>só neste navegador</strong> — nunca aparece no código público.
+      </p>
+      <div style="display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap">
+        <div class="form-group" style="flex:1;min-width:200px">
+          <label class="form-label">Token (ghp_...)</label>
+          <input type="password" class="form-input" id="token-input" placeholder="ghp_xxxxxxxxxxxx">
+        </div>
+        <button class="btn btn-primary" onclick="saveToken()" style="margin-bottom:1px">💾 Salvar Token</button>
+      </div>
+      <div style="margin-top:12px;font-size:12px;color:var(--gray-500)">
+        💡 Gere em: GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic) → marque ✅ <strong>repo</strong>
+      </div>
+    </div>
+
+    <!-- STATUS BAR -->
+    <div id="sync-status-bar" style="border-radius:12px;padding:14px 20px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;background:var(--gray-100);border:1.5px solid var(--gray-200)">
+      <div style="display:flex;align-items:center;gap:10px">
+        <span id="sync-dot" style="width:10px;height:10px;border-radius:50%;background:var(--gray-300);display:inline-block;flex-shrink:0"></span>
+        <span id="sync-status-text" style="color:var(--gray-700)">Verificando conexão com GitHub...</span>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn btn-primary btn-sm" onclick="githubPush()" id="btn-push">☁️ Salvar na Nuvem</button>
+        <button class="btn btn-secondary btn-sm" onclick="githubPull()" id="btn-pull">⬇️ Carregar da Nuvem</button>
+      </div>
+    </div>
+
+    <div class="two-col">
+
+      <!-- GITHUB SYNC -->
+      <div class="card">
+        <div class="card-title">☁️ Sincronização GitHub</div>
+
+        <div style="background:var(--gold-pale);border-radius:10px;padding:14px 16px;margin-bottom:18px;display:flex;gap:10px;align-items:flex-start">
+          <span style="font-size:20px">💡</span>
+          <div style="font-size:13px;color:var(--brown-mid);line-height:1.6">
+            Seus dados ficam salvos no GitHub e sincronizam automaticamente em <strong>qualquer celular ou computador</strong> que abrir este arquivo.
+          </div>
+        </div>
+
+        <div style="font-size:13px;color:var(--gray-700);margin-bottom:16px;line-height:1.7">
+          <strong>Repositório:</strong> <code style="background:var(--gray-100);padding:2px 8px;border-radius:6px">erjinfo/atelie-dados</code><br>
+          <strong>Arquivo:</strong> <code style="background:var(--gray-100);padding:2px 8px;border-radius:6px">dados.json</code>
+        </div>
+
+        <div id="backup-info" style="font-size:13px;color:var(--gray-500);margin-bottom:16px;background:var(--gray-100);border-radius:8px;padding:10px 14px"></div>
+
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <button class="btn btn-primary" onclick="githubPush()" style="justify-content:center">
+            ☁️ Salvar tudo no GitHub agora
+          </button>
+          <button class="btn btn-secondary" onclick="githubPull()" style="justify-content:center">
+            ⬇️ Carregar dados do GitHub
+          </button>
+          <button class="btn btn-secondary btn-sm" onclick="resetToken()" style="justify-content:center;color:var(--danger)">
+            🔑 Trocar Token
+          </button>
+        </div>
+
+        <div id="sync-log" style="margin-top:14px;font-size:12px;color:var(--gray-500);min-height:20px"></div>
+      </div>
+
+      <!-- BACKUP LOCAL -->
+      <div class="card">
+        <div class="card-title">📁 Backup Local (arquivo)</div>
+        <p style="font-size:13px;color:var(--gray-700);line-height:1.6;margin-bottom:16px">
+          Salva um arquivo <code style="background:var(--gray-100);padding:2px 6px;border-radius:4px">.json</code> no seu dispositivo como cópia de segurança extra.
+        </p>
+
+        <button class="btn btn-secondary" onclick="exportBackup()" style="width:100%;justify-content:center;margin-bottom:20px">
+          📤 Baixar Backup Local (.json)
+        </button>
+
+        <div class="divider"></div>
+        <div style="font-size:13px;font-weight:600;color:var(--brown-deep);margin:14px 0 10px">Importar arquivo local</div>
+
+        <div style="border:2px dashed var(--gray-300);border-radius:10px;padding:22px;text-align:center;margin-bottom:14px;transition:all 0.2s"
+          id="drop-zone"
+          ondragover="event.preventDefault();this.style.borderColor='var(--gold)';this.style.background='var(--gold-pale)'"
+          ondragleave="this.style.borderColor='var(--gray-300)';this.style.background=''"
+          ondrop="handleDrop(event)">
+          <div style="font-size:28px;margin-bottom:6px">📁</div>
+          <div style="font-size:13px;font-weight:600;color:var(--brown-mid);margin-bottom:4px">Arraste o arquivo aqui</div>
+          <div style="font-size:11px;color:var(--gray-500);margin-bottom:12px">ou clique para selecionar</div>
+          <input type="file" id="import-file" accept=".json" style="display:none" onchange="previewImport(this)">
+          <button class="btn btn-secondary btn-sm" onclick="document.getElementById('import-file').click()">Selecionar arquivo</button>
+        </div>
+
+        <div id="import-preview" style="display:none;background:var(--gray-100);border-radius:10px;padding:12px;margin-bottom:12px;font-size:13px">
+          <div style="font-weight:600;margin-bottom:6px;color:var(--brown-deep)">📋 Arquivo selecionado:</div>
+          <div id="import-preview-text" style="color:var(--gray-700);line-height:1.7"></div>
+        </div>
+
+        <div style="display:flex;gap:8px;flex-wrap:wrap" id="import-btns">
+          <button class="btn btn-primary" id="btn-merge" onclick="doImport('merge')" style="display:none;flex:1;justify-content:center">🔀 Mesclar</button>
+          <button class="btn btn-secondary" id="btn-replace" onclick="doImport('replace')" style="display:none;flex:1;justify-content:center">🔄 Substituir tudo</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 </div>
 </div>
 
@@ -972,6 +1082,7 @@ function switchSubTab(name, btn) {
   if(name==='historico') renderHistorico();
   if(name==='relatorio') { renderRelatorio(); setTimeout(drawCharts,100); }
   if(name==='clientes') renderClientes();
+  if(name==='backup') updateBackupInfo();
 }
 
 // Header date
@@ -1495,14 +1606,286 @@ function exportClientesPDF() {
   toast('Lista de clientes exportada!','👥');
 }
 
+// ═══════════════════════════════════════════
+//  GITHUB SYNC
+// ═══════════════════════════════════════════
+const GH = {
+  get token() { return localStorage.getItem('gh_token') || ''; },
+  owner: 'erjinfo',
+  repo:  'gestaocasa-atelie',
+  file:  'dados.json',
+  get url() { return `https://api.github.com/repos/${this.owner}/${this.repo}/contents/${this.file}`; }
+};
+
+let ghFileSha = null;
+
+function saveToken() {
+  const t = document.getElementById('token-input').value.trim();
+  if (!t.startsWith('ghp_') && !t.startsWith('github_pat_')) {
+    toast('Token inválido. Deve começar com ghp_', '⚠️'); return;
+  }
+  localStorage.setItem('gh_token', t);
+  document.getElementById('token-config-card').style.display = 'none';
+  toast('Token salvo neste navegador!', '🔑');
+  githubPull();
+}
+
+function checkToken() {
+  if (!GH.token) {
+    document.getElementById('token-config-card').style.display = 'block';
+    setSyncStatus('idle', '⚠️ Token não configurado. Insira seu token acima.');
+    return false;
+  }
+  document.getElementById('token-config-card').style.display = 'none';
+  return true;
+}
+
+function setSyncStatus(state, msg) {
+  const dot = document.getElementById('sync-dot');
+  const txt = document.getElementById('sync-status-text');
+  const log = document.getElementById('sync-log');
+  if (!dot) return;
+  const colors = { ok:'#4CAF82', error:'#E05C5C', loading:'#C9A84C', idle:'#9A8F85' };
+  dot.style.background = colors[state] || colors.idle;
+  if (txt) txt.textContent = msg;
+  if (log) { log.textContent = '⏱ ' + new Date().toLocaleTimeString('pt-BR') + ' — ' + msg; }
+}
+
+async function githubPull() {
+  if (!checkToken()) return;
+  setSyncStatus('loading', 'Carregando dados do GitHub...');
+  try {
+    const res = await fetch(GH.url + '?t=' + Date.now(), {
+      headers: { Authorization: 'token ' + GH.token, Accept: 'application/vnd.github.v3+json' }
+    });
+    if (res.status === 404) {
+      setSyncStatus('idle', 'Nenhum dado salvo no GitHub ainda. Salve primeiro!');
+      return;
+    }
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const json = await res.json();
+    ghFileSha = json.sha;
+    const data = JSON.parse(atob(json.content.replace(/\n/g,'')));
+
+    // merge inteligente: pega o mais recente
+    const remoteVendas = data.vendas || [];
+    const remoteGastos = data.gastos || [];
+    const remoteCasa   = data.casaContas || [];
+
+    const existV = new Set(vendas.map(v=>v.id));
+    const existG = new Set(gastos.map(g=>g.id));
+    const existC = new Set(casaContas.map(c=>c.id));
+
+    const addedV = remoteVendas.filter(v=>!existV.has(v.id));
+    const addedG = remoteGastos.filter(g=>!existG.has(g.id));
+    const addedC = remoteCasa.filter(c=>!existC.has(c.id));
+
+    vendas     = [...vendas, ...addedV];
+    gastos     = [...gastos, ...addedG];
+    casaContas = [...casaContas, ...addedC];
+
+    saveAtelie(); saveCasa();
+    updateAtStats(); updateCasaStats(); renderCasaTable(); updateBackupInfo();
+
+    setSyncStatus('ok', `Sincronizado! +${addedV.length} vendas, +${addedG.length} gastos novos.`);
+    toast(`Dados carregados do GitHub!`, '☁️');
+  } catch(e) {
+    setSyncStatus('error', 'Erro ao carregar: ' + e.message);
+    toast('Erro ao conectar com GitHub', '❌');
+  }
+}
+
+async function githubPush() {
+  if (!checkToken()) return;
+  setSyncStatus('loading', 'Salvando no GitHub...');
+  try {
+    // busca SHA atual se não tiver
+    if (!ghFileSha) {
+      const check = await fetch(GH.url, {
+        headers: { Authorization: 'token ' + GH.token, Accept: 'application/vnd.github.v3+json' }
+      });
+      if (check.ok) {
+        const j = await check.json();
+        ghFileSha = j.sha;
+      }
+    }
+
+    const data = { versao:'1.0', salvoEm: new Date().toISOString(), vendas, gastos, casaContas };
+    const content = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2))));
+
+    const body = {
+      message: '💾 Atualização automática — ' + new Date().toLocaleString('pt-BR'),
+      content,
+      ...(ghFileSha ? { sha: ghFileSha } : {})
+    };
+
+    const res = await fetch(GH.url, {
+      method: 'PUT',
+      headers: {
+        Authorization: 'token ' + GH.token,
+        Accept: 'application/vnd.github.v3+json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    });
+
+    if (!res.ok) {
+      const err = await res.json();
+      throw new Error(err.message || 'HTTP ' + res.status);
+    }
+
+    const result = await res.json();
+    ghFileSha = result.content.sha;
+    setSyncStatus('ok', 'Salvo no GitHub em ' + new Date().toLocaleTimeString('pt-BR'));
+    toast('Dados salvos na nuvem!', '☁️');
+  } catch(e) {
+    setSyncStatus('error', 'Erro ao salvar: ' + e.message);
+    toast('Erro ao salvar no GitHub', '❌');
+  }
+}
+
+function resetToken() {
+  localStorage.removeItem('gh_token');
+  ghFileSha = null;
+  document.getElementById('token-config-card').style.display = 'block';
+  setSyncStatus('idle', '⚠️ Token removido. Insira um novo token acima.');
+}
+
+// Auto-sync: salva no GitHub 5s após qualquer alteração
+let syncTimer = null;
+function schedulePush() {
+  clearTimeout(syncTimer);
+  syncTimer = setTimeout(() => githubPush(), 5000);
+  setSyncStatus('loading', 'Salvando automaticamente em 5s...');
+}
+
+// Sobrescreve saveAtelie e saveCasa para acionar auto-sync
+const _origSaveAtelie = saveAtelie;
+saveAtelie = function() {
+  localStorage.setItem('atVendas', JSON.stringify(vendas));
+  localStorage.setItem('atGastos', JSON.stringify(gastos));
+  schedulePush();
+};
+const _origSaveCasa = saveCasa;
+saveCasa = function() {
+  localStorage.setItem('casaContas', JSON.stringify(casaContas));
+  schedulePush();
+};
+
+// ═══════════════════════════════════════════
+//  BACKUP — EXPORTAR / IMPORTAR LOCAL
+// ═══════════════════════════════════════════
+let pendingImportData = null;
+
+function updateBackupInfo() {
+  const el = document.getElementById('backup-info');
+  if (!el) return;
+  el.innerHTML = `
+    <div style="display:flex;gap:20px;flex-wrap:wrap">
+      <span>🛍️ <strong>${vendas.length}</strong> venda(s)</span>
+      <span>💸 <strong>${gastos.length}</strong> gasto(s)</span>
+      <span>👥 <strong>${[...new Set(vendas.map(v=>v.cliente))].length}</strong> cliente(s)</span>
+    </div>`;
+}
+
+function exportBackup() {
+  const data = { versao:'1.0', exportadoEm: new Date().toISOString(), vendas, gastos, casaContas };
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type:'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `backup-atelie-${new Date().toLocaleDateString('pt-BR').replace(/\//g,'-')}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+  toast('Backup local exportado!', '📤');
+}
+
+function handleDrop(event) {
+  event.preventDefault();
+  document.getElementById('drop-zone').style.borderColor = 'var(--gray-300)';
+  document.getElementById('drop-zone').style.background = '';
+  const file = event.dataTransfer.files[0];
+  if (file && file.name.endsWith('.json')) readImportFile(file);
+  else toast('Selecione um arquivo .json válido', '⚠️');
+}
+
+function previewImport(input) {
+  const file = input.files[0];
+  if (file) readImportFile(file);
+}
+
+function readImportFile(file) {
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      const data = JSON.parse(e.target.result);
+      if (!data.vendas && !data.gastos) throw new Error('Formato inválido');
+      pendingImportData = data;
+      const exportDate = data.exportadoEm || data.salvoEm
+        ? new Date(data.exportadoEm||data.salvoEm).toLocaleString('pt-BR') : '—';
+      document.getElementById('import-preview').style.display = 'block';
+      document.getElementById('import-preview-text').innerHTML =
+        `📅 Salvo em: <strong>${exportDate}</strong><br>
+         🛍️ <strong>${(data.vendas||[]).length}</strong> venda(s)<br>
+         💸 <strong>${(data.gastos||[]).length}</strong> gasto(s)<br>
+         🏠 <strong>${(data.casaContas||[]).length}</strong> conta(s) da casa`;
+      document.getElementById('btn-merge').style.display = 'flex';
+      document.getElementById('btn-replace').style.display = 'flex';
+      toast('Arquivo lido! Escolha como importar.', '📋');
+    } catch(err) {
+      toast('Arquivo inválido ou corrompido', '❌');
+      pendingImportData = null;
+    }
+  };
+  reader.readAsText(file);
+}
+
+function doImport(mode) {
+  if (!pendingImportData) return;
+  const newVendas = pendingImportData.vendas || [];
+  const newGastos = pendingImportData.gastos || [];
+  const newCasa   = pendingImportData.casaContas || [];
+
+  if (mode === 'replace') {
+    if (!confirm(`Substituir TUDO? Os dados atuais serão apagados!\n\nSerão importados: ${newVendas.length} vendas, ${newGastos.length} gastos.`)) return;
+    vendas = newVendas; gastos = newGastos; casaContas = newCasa;
+  } else {
+    const existV = new Set(vendas.map(v=>v.id));
+    const existG = new Set(gastos.map(g=>g.id));
+    const existC = new Set(casaContas.map(c=>c.id));
+    const addedV = newVendas.filter(v=>!existV.has(v.id));
+    const addedG = newGastos.filter(g=>!existG.has(g.id));
+    const addedC = newCasa.filter(c=>!existC.has(c.id));
+    vendas = [...vendas, ...addedV];
+    gastos = [...gastos, ...addedG];
+    casaContas = [...casaContas, ...addedC];
+    toast(`Mesclado! +${addedV.length} vendas, +${addedG.length} gastos`, '🔀');
+  }
+
+  saveAtelie(); saveCasa();
+  updateAtStats(); updateCasaStats(); renderCasaTable(); updateBackupInfo();
+
+  pendingImportData = null;
+  document.getElementById('import-preview').style.display = 'none';
+  document.getElementById('btn-merge').style.display = 'none';
+  document.getElementById('btn-replace').style.display = 'none';
+  document.getElementById('import-file').value = '';
+
+  if (mode === 'replace') toast('Dados substituídos com sucesso!', '✅');
+}
+
 // ── INIT ──
 renderCasaTable();
 updateCasaStats();
 updateAtStats();
-addVendaItem(); // start with one item
-// Set default month filter
+addVendaItem();
 const now = new Date();
 document.getElementById('hist-mes').value = now.toISOString().slice(0,7);
+updateBackupInfo();
+
+// Carrega dados do GitHub automaticamente ao abrir
+if (GH.token) githubPull().catch(()=>{});
+else { setSyncStatus('idle', '⚠️ Token não configurado. Vá em Backup > 💾 para configurar.'); }
 </script>
 </body>
 </html>
