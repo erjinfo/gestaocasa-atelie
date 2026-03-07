@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-07T12:01:44.241Z",
+  "salvoEm": "2026-03-07T12:02:09.326Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -142,6 +142,20 @@
         }
       ],
       "total": 50
+    },
+    {
+      "id": "mmg9wqlasszhj20mg3",
+      "data": "2026-03-07",
+      "cliente": "Rejane (D. Rosa)",
+      "tel": "",
+      "itens": [
+        {
+          "modelo": "Terço Pulseira",
+          "valor": 20,
+          "qty": 5
+        }
+      ],
+      "total": 100
     }
   ],
   "gastos": [],
