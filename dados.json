@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-07T18:40:20.944Z",
+  "salvoEm": "2026-03-07T18:41:36.714Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -269,6 +269,20 @@
         }
       ],
       "total": 55
+    },
+    {
+      "id": "mmgo6fy70oiwahbn3k5",
+      "data": "2026-03-07",
+      "cliente": "Aliria",
+      "tel": "19989087172",
+      "itens": [
+        {
+          "modelo": "Compacto Santa Teresa ",
+          "valor": 20,
+          "qty": 1
+        }
+      ],
+      "total": 20
     }
   ],
   "gastos": [
