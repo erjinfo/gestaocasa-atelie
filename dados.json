@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-07T12:03:58.228Z",
+  "salvoEm": "2026-03-07T12:04:19.689Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -180,6 +180,20 @@
         }
       ],
       "total": 95
+    },
+    {
+      "id": "mmg9zj6opply18i83an",
+      "data": "2026-03-07",
+      "cliente": "Luiz Negri",
+      "tel": "19 99490-1658",
+      "itens": [
+        {
+          "modelo": "Terço Azul Luxuoso N.S.Aparecida ×1",
+          "valor": 45,
+          "qty": 1
+        }
+      ],
+      "total": 45
     }
   ],
   "gastos": [],
