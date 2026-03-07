@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-07T12:04:56.298Z",
+  "salvoEm": "2026-03-07T12:05:15.023Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -203,6 +203,20 @@
       "itens": [
         {
           "modelo": "Coroa das Lagrimas Branco ×1",
+          "valor": 25,
+          "qty": 1
+        }
+      ],
+      "total": 25
+    },
+    {
+      "id": "mmga0pvkvxozokbywo",
+      "data": "2026-03-07",
+      "cliente": "Luiz Bosco AR",
+      "tel": "19 99813-9429",
+      "itens": [
+        {
+          "modelo": "Preto São Bento simples ×1",
           "valor": 25,
           "qty": 1
         }
