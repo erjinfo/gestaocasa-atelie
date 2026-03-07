@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-07T12:00:44.700Z",
+  "salvoEm": "2026-03-07T12:01:08.794Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -104,6 +104,20 @@
       "itens": [
         {
           "modelo": "Perola de N.S. Graças ",
+          "valor": 35,
+          "qty": 1
+        }
+      ],
+      "total": 35
+    },
+    {
+      "id": "mmg9vfw01kg5a1ck8mh",
+      "data": "2026-03-07",
+      "cliente": "Celso",
+      "tel": "",
+      "itens": [
+        {
+          "modelo": "Terço branco (leitosa) N.S.Graças ×1",
           "valor": 35,
           "qty": 1
         }
