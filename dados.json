@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-07T11:59:00.564Z",
+  "salvoEm": "2026-03-07T11:59:20.777Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -20,6 +20,20 @@
         }
       ],
       "total": 55
+    },
+    {
+      "id": "mmg9t4jirslfahdlajf",
+      "data": "2026-03-07",
+      "cliente": "Fernanda (Barreto)",
+      "tel": "",
+      "itens": [
+        {
+          "modelo": "Terço Colar",
+          "valor": 20,
+          "qty": 1
+        }
+      ],
+      "total": 20
     }
   ],
   "gastos": [],
