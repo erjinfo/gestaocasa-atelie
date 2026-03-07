@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-07T12:00:00.399Z",
+  "salvoEm": "2026-03-07T12:00:14.026Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -67,6 +67,20 @@
         }
       ],
       "total": 15
+    },
+    {
+      "id": "mmg9u9mfunfvtu078ih",
+      "data": "2026-03-07",
+      "cliente": "Fernanda (Botanico)",
+      "tel": "",
+      "itens": [
+        {
+          "modelo": "Terço de Coração",
+          "valor": 20,
+          "qty": 1
+        }
+      ],
+      "total": 20
     }
   ],
   "gastos": [],
