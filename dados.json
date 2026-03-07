@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-07T12:02:09.326Z",
+  "salvoEm": "2026-03-07T12:03:58.228Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -156,6 +156,30 @@
         }
       ],
       "total": 100
+    },
+    {
+      "id": "mmg9z2mgg8i1ylsnne",
+      "data": "2026-03-07",
+      "cliente": "D. Rosa",
+      "tel": "",
+      "itens": [
+        {
+          "modelo": "Rosario compacto Marrom + 1 Rosa",
+          "valor": 20,
+          "qty": 2
+        },
+        {
+          "modelo": "Terço marrom simples ",
+          "valor": 20,
+          "qty": 1
+        },
+        {
+          "modelo": " Terço Vermelho e Dourado ×1",
+          "valor": 35,
+          "qty": 1
+        }
+      ],
+      "total": 95
     }
   ],
   "gastos": [],
