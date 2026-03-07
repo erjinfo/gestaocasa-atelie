@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-07T12:05:35.475Z",
+  "salvoEm": "2026-03-07T12:06:00.340Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -231,6 +231,20 @@
       "itens": [
         {
           "modelo": "Terço Marrom sextavado ×1",
+          "valor": 30,
+          "qty": 1
+        }
+      ],
+      "total": 30
+    },
+    {
+      "id": "mmga1ou6a10n3jzdyh9",
+      "data": "2026-03-07",
+      "cliente": "Maria Ligia",
+      "tel": "19 99252-6202",
+      "itens": [
+        {
+          "modelo": "Terço Rosa com detalhes ×1",
           "valor": 30,
           "qty": 1
         }
