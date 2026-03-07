@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-07T18:41:36.714Z",
+  "salvoEm": "2026-03-07T19:15:27.925Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -283,6 +283,20 @@
         }
       ],
       "total": 20
+    },
+    {
+      "id": "mmgpdz8l3es74gz19rx",
+      "data": "2026-03-07",
+      "cliente": "Lygia",
+      "tel": "19991968094",
+      "itens": [
+        {
+          "modelo": "Luxo Azul Nossa Senhora ",
+          "valor": 45,
+          "qty": 1
+        }
+      ],
+      "total": 45
     }
   ],
   "gastos": [
