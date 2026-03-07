@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-07T12:09:50.010Z",
+  "salvoEm": "2026-03-07T12:10:07.869Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -306,6 +306,34 @@
       "cat": "SHOPPE",
       "desc": "",
       "valor": 68.36
+    },
+    {
+      "id": "mmga6qpjacchwaz35ys",
+      "data": "2026-03-07",
+      "cat": "SHOPPE",
+      "desc": "",
+      "valor": 59
+    },
+    {
+      "id": "mmga6tpzkykjl5xsm3l",
+      "data": "2026-03-07",
+      "cat": "SHOPPE",
+      "desc": "",
+      "valor": 200
+    },
+    {
+      "id": "mmga6wjk8c216k1c8jw",
+      "data": "2026-03-07",
+      "cat": "SHOPPE",
+      "desc": "",
+      "valor": 362.11
+    },
+    {
+      "id": "mmga6ztz69waavg2co4",
+      "data": "2026-03-07",
+      "cat": "SHOPPE",
+      "desc": "",
+      "valor": 37.83
     }
   ],
   "casaContas": []
