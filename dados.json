@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-07T12:04:19.689Z",
+  "salvoEm": "2026-03-07T12:04:56.298Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -194,6 +194,20 @@
         }
       ],
       "total": 45
+    },
+    {
+      "id": "mmga0bfc9z25j74z2f",
+      "data": "2026-03-07",
+      "cliente": "Milton Francisco Terço Dos Homens",
+      "tel": "19 99262-7709",
+      "itens": [
+        {
+          "modelo": "Coroa das Lagrimas Branco ×1",
+          "valor": 25,
+          "qty": 1
+        }
+      ],
+      "total": 25
     }
   ],
   "gastos": [],
