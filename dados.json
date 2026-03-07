@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-07T11:59:20.777Z",
+  "salvoEm": "2026-03-07T11:59:43.084Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -34,6 +34,25 @@
         }
       ],
       "total": 20
+    },
+    {
+      "id": "mmg9tlqw297aj8kjz17",
+      "data": "2026-03-07",
+      "cliente": "Lê Manicure",
+      "tel": "",
+      "itens": [
+        {
+          "modelo": "Terço de Carro ",
+          "valor": 15,
+          "qty": 1
+        },
+        {
+          "modelo": "Pulseira ",
+          "valor": 20,
+          "qty": 1
+        }
+      ],
+      "total": 35
     }
   ],
   "gastos": [],
