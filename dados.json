@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-07T19:21:03.046Z",
+  "salvoEm": "2026-03-07T19:23:16.779Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -363,6 +363,25 @@
         }
       ],
       "total": 55
+    },
+    {
+      "id": "mmgpo10fbtq68fkt1v",
+      "data": "2026-03-07",
+      "cliente": "Sueli (Barreto)",
+      "tel": "19989944702",
+      "itens": [
+        {
+          "modelo": "Terço compacto Santa Teresa ",
+          "valor": 20,
+          "qty": 1
+        },
+        {
+          "modelo": "Terço Azul💙🫐",
+          "valor": 30,
+          "qty": 1
+        }
+      ],
+      "total": 50
     }
   ],
   "gastos": [
