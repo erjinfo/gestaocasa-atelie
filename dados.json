@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-07T12:09:44.619Z",
+  "salvoEm": "2026-03-07T12:09:50.010Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -299,6 +299,13 @@
       "cat": "SHOPPE",
       "desc": "",
       "valor": 150
+    },
+    {
+      "id": "mmga6m1ytj4buwh08st",
+      "data": "2026-03-07",
+      "cat": "SHOPPE",
+      "desc": "",
+      "valor": 68.36
     }
   ],
   "casaContas": []
