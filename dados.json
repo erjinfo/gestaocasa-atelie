@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-07T12:06:00.340Z",
+  "salvoEm": "2026-03-07T12:06:43.545Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -250,6 +250,25 @@
         }
       ],
       "total": 30
+    },
+    {
+      "id": "mmga2m6oypf143plkj",
+      "data": "2026-03-07",
+      "cliente": "Layla AR",
+      "tel": "19 99804-4425",
+      "itens": [
+        {
+          "modelo": "rosario compacto rosa ×1",
+          "valor": 20,
+          "qty": 1
+        },
+        {
+          "modelo": "Terço Azul (leitosa) N.S. Aparecida ×1",
+          "valor": 35,
+          "qty": 1
+        }
+      ],
+      "total": 55
     }
   ],
   "gastos": [],
