@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-07T12:00:29.358Z",
+  "salvoEm": "2026-03-07T12:00:44.700Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -90,6 +90,20 @@
       "itens": [
         {
           "modelo": "Verde Grande N.S. Aparecida",
+          "valor": 35,
+          "qty": 1
+        }
+      ],
+      "total": 35
+    },
+    {
+      "id": "mmg9uxaodthu691ih2i",
+      "data": "2026-03-07",
+      "cliente": "Jane (Barreto)",
+      "tel": "",
+      "itens": [
+        {
+          "modelo": "Perola de N.S. Graças ",
           "valor": 35,
           "qty": 1
         }
