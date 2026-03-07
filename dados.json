@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-07T19:15:27.925Z",
+  "salvoEm": "2026-03-07T19:17:18.842Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -297,6 +297,25 @@
         }
       ],
       "total": 45
+    },
+    {
+      "id": "mmgpgctrw9u0pkz6tc",
+      "data": "2026-03-07",
+      "cliente": "Catarina e Andre",
+      "tel": "19993350428",
+      "itens": [
+        {
+          "modelo": "Terço com nome Vermelho ",
+          "valor": 30,
+          "qty": 1
+        },
+        {
+          "modelo": "Terço Azul com nome",
+          "valor": 30,
+          "qty": 1
+        }
+      ],
+      "total": 60
     }
   ],
   "gastos": [
