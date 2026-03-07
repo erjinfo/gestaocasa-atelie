@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-07T12:05:15.023Z",
+  "salvoEm": "2026-03-07T12:05:35.475Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -222,6 +222,20 @@
         }
       ],
       "total": 25
+    },
+    {
+      "id": "mmga15nsyxl4anjgoqc",
+      "data": "2026-03-07",
+      "cliente": "Marcela AR",
+      "tel": "19 99240-5521",
+      "itens": [
+        {
+          "modelo": "Terço Marrom sextavado ×1",
+          "valor": 30,
+          "qty": 1
+        }
+      ],
+      "total": 30
     }
   ],
   "gastos": [],
