@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-09T14:50:57.304Z",
+  "salvoEm": "2026-03-09T14:51:14.334Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -709,6 +709,11 @@
       "id": "mmjatiq6e3eiv5p8ruj",
       "conta": "FATURA PATY",
       "valor": 2047.7
+    },
+    {
+      "id": "mmjatvvajvv9w4zwqte",
+      "conta": "ÁGUA",
+      "valor": 73.2
     }
   ]
 }
