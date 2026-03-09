@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-09T14:49:59.777Z",
+  "salvoEm": "2026-03-09T14:50:05.993Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -694,6 +694,11 @@
       "id": "mmjasac8isbb0hg8t3j",
       "conta": "CLARO PATY",
       "valor": 55
+    },
+    {
+      "id": "mmjasf4w4iadw6jz4aq",
+      "conta": "VIVO PATY",
+      "valor": 35
     }
   ]
 }
