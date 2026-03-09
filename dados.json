@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-09T14:51:45.359Z",
+  "salvoEm": "2026-03-09T14:51:53.647Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -724,6 +724,11 @@
       "id": "mmjaujszkirfdil04w",
       "conta": "IPTU",
       "valor": 147
+    },
+    {
+      "id": "mmjauq793gt3lxrl7uy",
+      "conta": "INTERNET",
+      "valor": 20
     }
   ]
 }
