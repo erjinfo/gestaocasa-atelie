@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-09T14:49:38.912Z",
+  "salvoEm": "2026-03-09T14:49:59.777Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -689,6 +689,11 @@
       "id": "mmjaru8m0as2tha4k9d8",
       "conta": "UNIMED PATY",
       "valor": 350
+    },
+    {
+      "id": "mmjasac8isbb0hg8t3j",
+      "conta": "CLARO PATY",
+      "valor": 55
     }
   ]
 }
