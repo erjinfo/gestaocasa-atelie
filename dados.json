@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-09T14:48:44.986Z",
+  "salvoEm": "2026-03-09T14:48:53.597Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -679,6 +679,11 @@
       "id": "mmjaqomoo64t9l6zrf",
       "conta": "IPVA CARRO",
       "valor": 465.56
+    },
+    {
+      "id": "mmjaqv9tde7syzzzsat",
+      "conta": "IPVA MOTO",
+      "valor": 157
     }
   ]
 }
