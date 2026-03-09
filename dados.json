@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-09T14:46:13.423Z",
+  "salvoEm": "2026-03-09T14:46:29.092Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -659,5 +659,11 @@
       "valor": 35.18
     }
   ],
-  "casaContas": []
+  "casaContas": [
+    {
+      "id": "mmjanrrs0ga7a1y47tn",
+      "conta": "UNIMED ERIC",
+      "valor": 300
+    }
+  ]
 }
