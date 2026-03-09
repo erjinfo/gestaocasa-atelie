@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-09T14:48:12.959Z",
+  "salvoEm": "2026-03-09T14:48:44.986Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -674,6 +674,11 @@
       "id": "mmjapzx0tj7j7zt2q",
       "conta": "FATURA ERIC",
       "valor": 2300
+    },
+    {
+      "id": "mmjaqomoo64t9l6zrf",
+      "conta": "IPVA CARRO",
+      "valor": 465.56
     }
   ]
 }
