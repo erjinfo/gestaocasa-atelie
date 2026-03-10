@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-10T14:26:46.624Z",
+  "salvoEm": "2026-03-10T14:27:20.278Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -396,6 +396,20 @@
         }
       ],
       "total": 30
+    },
+    {
+      "id": "mmkpf00a6t75ls31ani",
+      "data": "2026-03-10",
+      "cliente": "Rejane",
+      "tel": "",
+      "itens": [
+        {
+          "modelo": "Terço Nossa Senhora de Fátima ",
+          "valor": 40,
+          "qty": 1
+        }
+      ],
+      "total": 40
     }
   ],
   "gastos": [
