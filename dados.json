@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-10T14:27:20.278Z",
+  "salvoEm": "2026-03-10T14:28:21.318Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -685,6 +685,13 @@
       "cat": "MERCADO LIVRE",
       "desc": "perolas azul royal 2000 - 500gr",
       "valor": 35.18
+    },
+    {
+      "id": "mmkpgb3wagze0dar5e4",
+      "data": "2026-03-10",
+      "cat": "SHOPPE",
+      "desc": "Cruz pequena",
+      "valor": 17
     }
   ],
   "casaContas": [
