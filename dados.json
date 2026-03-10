@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-10T14:25:11.130Z",
+  "salvoEm": "2026-03-10T14:26:46.624Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -382,6 +382,20 @@
         }
       ],
       "total": 50
+    },
+    {
+      "id": "mmkpea1h98pq139q5ii",
+      "data": "2026-03-10",
+      "cliente": "Leandro (Barreto)",
+      "tel": "",
+      "itens": [
+        {
+          "modelo": "Terço de São José ",
+          "valor": 30,
+          "qty": 1
+        }
+      ],
+      "total": 30
     }
   ],
   "gastos": [
