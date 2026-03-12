@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-12T22:12:15.222Z",
+  "salvoEm": "2026-03-12T22:12:49.710Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -410,6 +410,20 @@
         }
       ],
       "total": 40
+    },
+    {
+      "id": "mmo0xbtxi34t1jho3a",
+      "data": "2026-03-12",
+      "cliente": "Gustavo Nuvyon",
+      "tel": "",
+      "itens": [
+        {
+          "modelo": "Terço Verde fruta cor Sagrada Família ",
+          "valor": 35,
+          "qty": 1
+        }
+      ],
+      "total": 35
     }
   ],
   "gastos": [
