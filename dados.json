@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-12T22:13:42.496Z",
+  "salvoEm": "2026-03-12T22:14:28.790Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -452,6 +452,20 @@
         }
       ],
       "total": 30
+    },
+    {
+      "id": "mmo0zga4zkethv6f12",
+      "data": "2026-03-12",
+      "cliente": "Ana RH Nuvyon",
+      "tel": "",
+      "itens": [
+        {
+          "modelo": "N.S. Fátima pérola e dourado ",
+          "valor": 40,
+          "qty": 1
+        }
+      ],
+      "total": 40
     }
   ],
   "gastos": [
