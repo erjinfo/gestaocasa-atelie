@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-15T09:35:03.288Z",
+  "salvoEm": "2026-03-15T09:35:32.489Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -475,6 +475,20 @@
       "itens": [
         {
           "modelo": "Terço de carro branco e preto ",
+          "valor": 15,
+          "qty": 1
+        }
+      ],
+      "total": 15
+    },
+    {
+      "id": "mmrk708vt2u75oe77oi",
+      "data": "2026-03-15",
+      "cliente": "Rafaella Nuvyon",
+      "tel": "",
+      "itens": [
+        {
+          "modelo": "Terço pulseira rosa e branco ",
           "valor": 15,
           "qty": 1
         }
