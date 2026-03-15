@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-15T09:34:15.110Z",
+  "salvoEm": "2026-03-15T09:35:03.288Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -466,6 +466,20 @@
         }
       ],
       "total": 40
+    },
+    {
+      "id": "mmrk6dprg1af2j8k9ya",
+      "data": "2026-03-15",
+      "cliente": "Fabiano Nuvyon",
+      "tel": "",
+      "itens": [
+        {
+          "modelo": "Terço de carro branco e preto ",
+          "valor": 15,
+          "qty": 1
+        }
+      ],
+      "total": 15
     }
   ],
   "gastos": [
