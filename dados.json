@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-16T17:07:42.128Z",
+  "salvoEm": "2026-03-16T17:08:21.390Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -522,6 +522,20 @@
         }
       ],
       "total": 30
+    },
+    {
+      "id": "mmtft5wfvodpciaydub",
+      "data": "2026-03-16",
+      "cliente": "Vangela (Barreto)",
+      "tel": "",
+      "itens": [
+        {
+          "modelo": "24 contas Nos AP e Sta Terezinha ",
+          "valor": 20,
+          "qty": 2
+        }
+      ],
+      "total": 40
     }
   ],
   "gastos": [
