@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-16T17:07:05.867Z",
+  "salvoEm": "2026-03-16T17:07:42.128Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -508,6 +508,20 @@
         }
       ],
       "total": 45
+    },
+    {
+      "id": "mmtfsc9yr7c8qptm8d",
+      "data": "2026-03-16",
+      "cliente": "Marleide",
+      "tel": "",
+      "itens": [
+        {
+          "modelo": "Pulseira terço rosa e branco e roxa",
+          "valor": 15,
+          "qty": 2
+        }
+      ],
+      "total": 30
     }
   ],
   "gastos": [
