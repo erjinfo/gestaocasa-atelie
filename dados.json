@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-20T10:41:16.362Z",
+  "salvoEm": "2026-03-20T10:41:52.640Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -601,6 +601,20 @@
       "itens": [
         {
           "modelo": "Terço pulseira perola",
+          "valor": 15,
+          "qty": 1
+        }
+      ],
+      "total": 15
+    },
+    {
+      "id": "mmyrrkom00l1j80rkzew",
+      "data": "2026-03-20",
+      "cliente": "Silvia CMPS",
+      "tel": "",
+      "itens": [
+        {
+          "modelo": "Terço Pulseira pérola ",
           "valor": 15,
           "qty": 1
         }
