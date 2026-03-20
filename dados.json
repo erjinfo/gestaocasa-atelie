@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-20T10:36:44.798Z",
+  "salvoEm": "2026-03-20T10:37:42.883Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -550,6 +550,20 @@
         }
       ],
       "total": 20
+    },
+    {
+      "id": "mmyrm7ywb5tnfr2bcg4",
+      "data": "2026-03-20",
+      "cliente": "Alexandre Nuvyon",
+      "tel": "",
+      "itens": [
+        {
+          "modelo": "Terco Luxo Pérola e dourado 10mm",
+          "valor": 45,
+          "qty": 2
+        }
+      ],
+      "total": 90
     }
   ],
   "gastos": [
