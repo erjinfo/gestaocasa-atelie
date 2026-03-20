@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-20T10:37:42.883Z",
+  "salvoEm": "2026-03-20T10:38:34.989Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -564,6 +564,20 @@
         }
       ],
       "total": 90
+    },
+    {
+      "id": "mmyrnbqoan4orl3ewn8",
+      "data": "2026-03-20",
+      "cliente": "Thiago Prof",
+      "tel": "",
+      "itens": [
+        {
+          "modelo": "Terco Premium com Nome Azul Royal ",
+          "valor": 35,
+          "qty": 1
+        }
+      ],
+      "total": 35
     }
   ],
   "gastos": [
