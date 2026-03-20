@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-20T10:38:34.989Z",
+  "salvoEm": "2026-03-20T10:39:41.990Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -578,6 +578,20 @@
         }
       ],
       "total": 35
+    },
+    {
+      "id": "mmyror4givb617a4m4g",
+      "data": "2026-03-20",
+      "cliente": "Eldo Nuvyon",
+      "tel": "",
+      "itens": [
+        {
+          "modelo": "Cordão Cruz de Madeira",
+          "valor": 5,
+          "qty": 1
+        }
+      ],
+      "total": 5
     }
   ],
   "gastos": [
