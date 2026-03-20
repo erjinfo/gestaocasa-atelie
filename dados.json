@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-20T10:41:52.640Z",
+  "salvoEm": "2026-03-20T10:43:29.708Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -615,6 +615,20 @@
       "itens": [
         {
           "modelo": "Terço Pulseira pérola ",
+          "valor": 15,
+          "qty": 1
+        }
+      ],
+      "total": 15
+    },
+    {
+      "id": "mmyrtnkx5k14twmgjzq",
+      "data": "2026-03-20",
+      "cliente": "Regiane Cães",
+      "tel": "",
+      "itens": [
+        {
+          "modelo": "Terço de Carro Branco N. S. Aparecida ",
           "valor": 15,
           "qty": 1
         }
