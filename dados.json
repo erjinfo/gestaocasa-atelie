@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-25T22:59:18.373Z",
+  "salvoEm": "2026-03-25T22:59:55.853Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -344,25 +344,6 @@
         }
       ],
       "total": 35
-    },
-    {
-      "id": "mmgpl5tnzhixok7863",
-      "data": "2026-03-07",
-      "cliente": "Maria Aparecida (botânico)",
-      "tel": "16997975228",
-      "itens": [
-        {
-          "modelo": "Terço pérola espírito santo ",
-          "valor": 35,
-          "qty": 1
-        },
-        {
-          "modelo": "Terço compacto São Miguel preto e prata",
-          "valor": 20,
-          "qty": 1
-        }
-      ],
-      "total": 55
     },
     {
       "id": "mmgpo10fbtq68fkt1v",
