@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-25T23:01:31.992Z",
+  "salvoEm": "2026-03-25T23:02:08.546Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -629,6 +629,20 @@
         }
       ],
       "total": 35
+    },
+    {
+      "id": "mn6net8v9oatpgqnurl",
+      "data": "2026-03-25",
+      "cliente": "Dani Nuvyon",
+      "tel": "",
+      "itens": [
+        {
+          "modelo": "Terço com Nome, Branco e Prata",
+          "valor": 25,
+          "qty": 1
+        }
+      ],
+      "total": 25
     }
   ],
   "gastos": [
