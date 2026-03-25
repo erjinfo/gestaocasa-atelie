@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-25T22:59:55.853Z",
+  "salvoEm": "2026-03-25T23:01:31.992Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -615,6 +615,20 @@
         }
       ],
       "total": 15
+    },
+    {
+      "id": "mn6ne1c9kbitbm0rxjr",
+      "data": "2026-03-25",
+      "cliente": "Doinicia",
+      "tel": "",
+      "itens": [
+        {
+          "modelo": "Terço espirito santo branco",
+          "valor": 35,
+          "qty": 1
+        }
+      ],
+      "total": 35
     }
   ],
   "gastos": [
