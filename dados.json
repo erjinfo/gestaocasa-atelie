@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-26T10:31:06.297Z",
+  "salvoEm": "2026-03-26T10:31:48.784Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -652,6 +652,20 @@
       "itens": [
         {
           "modelo": "Terço Premium 8mm 🫐 azul",
+          "valor": 40,
+          "qty": 1
+        }
+      ],
+      "total": 40
+    },
+    {
+      "id": "mn7c1mqs15af0a3abar",
+      "data": "2026-03-26",
+      "cliente": "Lanna CPP",
+      "tel": "",
+      "itens": [
+        {
+          "modelo": "Terço com Nome Alice rosa/branco premium",
           "valor": 40,
           "qty": 1
         }
