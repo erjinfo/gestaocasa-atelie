@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-03-26T10:30:13.895Z",
+  "salvoEm": "2026-03-26T10:31:06.297Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -643,6 +643,20 @@
         }
       ],
       "total": 25
+    },
+    {
+      "id": "mn7c0tylxeq9splhzqo",
+      "data": "2026-03-26",
+      "cliente": "Roseli CPP",
+      "tel": "",
+      "itens": [
+        {
+          "modelo": "Terço Premium 8mm 🫐 azul",
+          "valor": 40,
+          "qty": 1
+        }
+      ],
+      "total": 40
     }
   ],
   "gastos": [
