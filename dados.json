@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-04-06T13:44:17.790Z",
+  "salvoEm": "2026-04-07T23:14:44.298Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -9,12 +9,12 @@
       "tel": "",
       "itens": [
         {
-          "modelo": "Terço Rosa simples",
+          "modelo": "TerÃ§o Rosa simples",
           "valor": 25,
           "qty": 1
         },
         {
-          "modelo": "Terço Branco",
+          "modelo": "TerÃ§o Branco",
           "valor": 30,
           "qty": 1
         }
@@ -28,7 +28,7 @@
       "tel": "",
       "itens": [
         {
-          "modelo": "Terço Colar",
+          "modelo": "TerÃ§o Colar",
           "valor": 20,
           "qty": 1
         }
@@ -38,11 +38,11 @@
     {
       "id": "mmg9tlqw297aj8kjz17",
       "data": "2026-03-07",
-      "cliente": "Lê Manicure",
+      "cliente": "LÃª Manicure",
       "tel": "",
       "itens": [
         {
-          "modelo": "Terço de Carro ",
+          "modelo": "TerÃ§o de Carro ",
           "valor": 15,
           "qty": 1
         },
@@ -61,7 +61,7 @@
       "tel": "",
       "itens": [
         {
-          "modelo": "Terço Rosa Compacto",
+          "modelo": "TerÃ§o Rosa Compacto",
           "valor": 15,
           "qty": 1
         }
@@ -75,7 +75,7 @@
       "tel": "",
       "itens": [
         {
-          "modelo": "Terço de Coração",
+          "modelo": "TerÃ§o de CoraÃ§Ã£o",
           "valor": 20,
           "qty": 1
         }
@@ -103,7 +103,7 @@
       "tel": "",
       "itens": [
         {
-          "modelo": "Perola de N.S. Graças ",
+          "modelo": "Perola de N.S. GraÃ§as ",
           "valor": 35,
           "qty": 1
         }
@@ -117,7 +117,7 @@
       "tel": "",
       "itens": [
         {
-          "modelo": "Terço branco (leitosa) N.S.Graças ×1",
+          "modelo": "TerÃ§o branco (leitosa) N.S.GraÃ§as Ã1",
           "valor": 35,
           "qty": 1
         }
@@ -131,12 +131,12 @@
       "tel": "",
       "itens": [
         {
-          "modelo": "Terço Compacto",
+          "modelo": "TerÃ§o Compacto",
           "valor": 20,
           "qty": 1
         },
         {
-          "modelo": "Terço Branco e Azu",
+          "modelo": "TerÃ§o Branco e Azu",
           "valor": 30,
           "qty": 1
         }
@@ -150,7 +150,7 @@
       "tel": "",
       "itens": [
         {
-          "modelo": "Terço Pulseira",
+          "modelo": "TerÃ§o Pulseira",
           "valor": 20,
           "qty": 5
         }
@@ -169,12 +169,12 @@
           "qty": 2
         },
         {
-          "modelo": "Terço marrom simples ",
+          "modelo": "TerÃ§o marrom simples ",
           "valor": 20,
           "qty": 1
         },
         {
-          "modelo": " Terço Vermelho e Dourado ×1",
+          "modelo": " TerÃ§o Vermelho e Dourado Ã1",
           "valor": 35,
           "qty": 1
         }
@@ -188,7 +188,7 @@
       "tel": "19 99490-1658",
       "itens": [
         {
-          "modelo": "Terço Azul Luxuoso N.S.Aparecida ×1",
+          "modelo": "TerÃ§o Azul Luxuoso N.S.Aparecida Ã1",
           "valor": 45,
           "qty": 1
         }
@@ -198,11 +198,11 @@
     {
       "id": "mmga0bfc9z25j74z2f",
       "data": "2026-03-07",
-      "cliente": "Milton Francisco Terço Dos Homens",
+      "cliente": "Milton Francisco TerÃ§o Dos Homens",
       "tel": "19 99262-7709",
       "itens": [
         {
-          "modelo": "Coroa das Lagrimas Branco ×1",
+          "modelo": "Coroa das Lagrimas Branco Ã1",
           "valor": 25,
           "qty": 1
         }
@@ -216,7 +216,7 @@
       "tel": "19 99813-9429",
       "itens": [
         {
-          "modelo": "Preto São Bento simples ×1",
+          "modelo": "Preto SÃ£o Bento simples Ã1",
           "valor": 25,
           "qty": 1
         }
@@ -230,7 +230,7 @@
       "tel": "19 99240-5521",
       "itens": [
         {
-          "modelo": "Terço Marrom sextavado ×1",
+          "modelo": "TerÃ§o Marrom sextavado Ã1",
           "valor": 30,
           "qty": 1
         }
@@ -244,7 +244,7 @@
       "tel": "19 99252-6202",
       "itens": [
         {
-          "modelo": "Terço Rosa com detalhes ×1",
+          "modelo": "TerÃ§o Rosa com detalhes Ã1",
           "valor": 30,
           "qty": 1
         }
@@ -258,12 +258,12 @@
       "tel": "19 99804-4425",
       "itens": [
         {
-          "modelo": "rosario compacto rosa ×1",
+          "modelo": "rosario compacto rosa Ã1",
           "valor": 20,
           "qty": 1
         },
         {
-          "modelo": "Terço Azul (leitosa) N.S. Aparecida ×1",
+          "modelo": "TerÃ§o Azul (leitosa) N.S. Aparecida Ã1",
           "valor": 35,
           "qty": 1
         }
@@ -305,12 +305,12 @@
       "tel": "19993350428",
       "itens": [
         {
-          "modelo": "TerÃ§o com nome Vermelho ",
+          "modelo": "Terço com nome Vermelho ",
           "valor": 30,
           "qty": 1
         },
         {
-          "modelo": "TerÃ§o Azul com nome",
+          "modelo": "Terço Azul com nome",
           "valor": 30,
           "qty": 1
         }
@@ -320,11 +320,11 @@
     {
       "id": "mmgpikd5zhv8o7vw2dd",
       "data": "2026-03-07",
-      "cliente": "Regiane CÃ£es",
+      "cliente": "Regiane Cães",
       "tel": "19994802156",
       "itens": [
         {
-          "modelo": "TerÃ§o rosa e branco com nome Julia",
+          "modelo": "Terço rosa e branco com nome Julia",
           "valor": 30,
           "qty": 1
         }
@@ -334,35 +334,16 @@
     {
       "id": "mmgpjrmpwoz02an4a1g",
       "data": "2026-03-07",
-      "cliente": "Ana ClÃ¡udia",
+      "cliente": "Ana Cláudia",
       "tel": "19992343328",
       "itens": [
         {
-          "modelo": "TerÃ§o verde Santa Luzia ",
+          "modelo": "Terço verde Santa Luzia ",
           "valor": 35,
           "qty": 1
         }
       ],
       "total": 35
-    },
-    {
-      "id": "mmgpl5tnzhixok7863",
-      "data": "2026-03-07",
-      "cliente": "Maria Aparecida (botÃ¢nico)",
-      "tel": "16997975228",
-      "itens": [
-        {
-          "modelo": "TerÃ§o pÃ©rola espÃ­rito santo ",
-          "valor": 35,
-          "qty": 1
-        },
-        {
-          "modelo": "TerÃ§o compacto SÃ£o Miguel preto e prata",
-          "valor": 20,
-          "qty": 1
-        }
-      ],
-      "total": 55
     },
     {
       "id": "mmgpo10fbtq68fkt1v",
@@ -371,12 +352,12 @@
       "tel": "19989944702",
       "itens": [
         {
-          "modelo": "TerÃ§o compacto Santa Teresa ",
+          "modelo": "Terço compacto Santa Teresa ",
           "valor": 20,
           "qty": 1
         },
         {
-          "modelo": "TerÃ§o Azulðð«",
+          "modelo": "Terço Azul💙🫐",
           "valor": 30,
           "qty": 1
         }
@@ -390,7 +371,7 @@
       "tel": "",
       "itens": [
         {
-          "modelo": "TerÃ§o de SÃ£o JosÃ© ",
+          "modelo": "Terço de São José ",
           "valor": 30,
           "qty": 1
         }
@@ -404,7 +385,7 @@
       "tel": "",
       "itens": [
         {
-          "modelo": "TerÃ§o Nossa Senhora de FÃ¡tima ",
+          "modelo": "Terço Nossa Senhora de Fátima ",
           "valor": 40,
           "qty": 1
         }
@@ -418,7 +399,7 @@
       "tel": "",
       "itens": [
         {
-          "modelo": "TerÃ§o Verde fruta cor Sagrada FamÃ­lia ",
+          "modelo": "Terço Verde fruta cor Sagrada Família ",
           "valor": 35,
           "qty": 1
         }
@@ -432,7 +413,7 @@
       "tel": "",
       "itens": [
         {
-          "modelo": "SÃ£o Bento Preto e Prata",
+          "modelo": "São Bento Preto e Prata",
           "valor": 30,
           "qty": 1
         }
@@ -460,7 +441,7 @@
       "tel": "",
       "itens": [
         {
-          "modelo": "N.S. FÃ¡tima pÃ©rola e dourado ",
+          "modelo": "N.S. Fátima pérola e dourado ",
           "valor": 40,
           "qty": 1
         }
@@ -474,7 +455,7 @@
       "tel": "",
       "itens": [
         {
-          "modelo": "TerÃ§o de carro branco e preto ",
+          "modelo": "Terço de carro branco e preto ",
           "valor": 15,
           "qty": 1
         }
@@ -488,7 +469,7 @@
       "tel": "",
       "itens": [
         {
-          "modelo": "TerÃ§o pulseira rosa e branco ",
+          "modelo": "Terço pulseira rosa e branco ",
           "valor": 15,
           "qty": 1
         }
@@ -498,11 +479,11 @@
     {
       "id": "mmrk7zwn03xu1dw3h46q",
       "data": "2026-03-15",
-      "cliente": "MoisÃ©s da Marisa",
+      "cliente": "Moisés da Marisa",
       "tel": "",
       "itens": [
         {
-          "modelo": "TerÃ§o Luxo Nossa Senhora Aparecida ",
+          "modelo": "Terço Luxo Nossa Senhora Aparecida ",
           "valor": 45,
           "qty": 1
         }
@@ -516,7 +497,7 @@
       "tel": "",
       "itens": [
         {
-          "modelo": "Pulseira terÃ§o rosa e branco e roxa",
+          "modelo": "Pulseira terço rosa e branco e roxa",
           "valor": 15,
           "qty": 2
         }
@@ -558,7 +539,7 @@
       "tel": "",
       "itens": [
         {
-          "modelo": "Terco Luxo PÃ©rola e dourado 10mm",
+          "modelo": "Terco Luxo Pérola e dourado 10mm",
           "valor": 45,
           "qty": 2
         }
@@ -586,7 +567,7 @@
       "tel": "",
       "itens": [
         {
-          "modelo": "CordÃ£o Cruz de Madeira",
+          "modelo": "Cordão Cruz de Madeira",
           "valor": 5,
           "qty": 1
         }
@@ -600,7 +581,7 @@
       "tel": "",
       "itens": [
         {
-          "modelo": "TerÃ§o pulseira perola",
+          "modelo": "Terço pulseira perola",
           "valor": 15,
           "qty": 1
         }
@@ -614,7 +595,7 @@
       "tel": "",
       "itens": [
         {
-          "modelo": "TerÃ§o Pulseira pÃ©rola ",
+          "modelo": "Terço Pulseira pérola ",
           "valor": 15,
           "qty": 1
         }
@@ -624,11 +605,11 @@
     {
       "id": "mmyrtnkx5k14twmgjzq",
       "data": "2026-03-20",
-      "cliente": "Regiane CÃ£es",
+      "cliente": "Regiane Cães",
       "tel": "",
       "itens": [
         {
-          "modelo": "TerÃ§o de Carro Branco N. S. Aparecida ",
+          "modelo": "Terço de Carro Branco N. S. Aparecida ",
           "valor": 15,
           "qty": 1
         }
@@ -642,7 +623,7 @@
       "tel": "",
       "itens": [
         {
-          "modelo": "TerÃ§o espirito santo branco",
+          "modelo": "Terço espirito santo branco",
           "valor": 35,
           "qty": 1
         }
@@ -656,7 +637,7 @@
       "tel": "",
       "itens": [
         {
-          "modelo": "TerÃ§o com Nome, Branco e Prata",
+          "modelo": "Terço com Nome, Branco e Prata",
           "valor": 25,
           "qty": 1
         }
@@ -670,7 +651,7 @@
       "tel": "",
       "itens": [
         {
-          "modelo": "TerÃ§o Premium 8mm ð« azul",
+          "modelo": "Terço Premium 8mm 🫐 azul",
           "valor": 40,
           "qty": 1
         }
@@ -684,7 +665,7 @@
       "tel": "",
       "itens": [
         {
-          "modelo": "TerÃ§o com Nome Alice rosa/branco premium",
+          "modelo": "Terço com Nome Alice rosa/branco premium",
           "valor": 40,
           "qty": 1
         }
@@ -698,12 +679,31 @@
       "tel": "",
       "itens": [
         {
-          "modelo": "TerÃ§o compacto sÃ£o Miguel ",
+          "modelo": "Terço compacto são Miguel ",
           "valor": 20,
           "qty": 1
         }
       ],
       "total": 20
+    },
+    {
+      "id": "mmgpl5tnzhixok7863",
+      "data": "2026-03-07",
+      "cliente": "Maria Aparecida (botÃÂ¢nico)",
+      "tel": "16997975228",
+      "itens": [
+        {
+          "modelo": "TerÃÂ§o pÃÂ©rola espÃÂ­rito santo ",
+          "valor": 35,
+          "qty": 1
+        },
+        {
+          "modelo": "TerÃÂ§o compacto SÃÂ£o Miguel preto e prata",
+          "valor": 20,
+          "qty": 1
+        }
+      ],
+      "total": 55
     }
   ],
   "gastos": [
@@ -991,7 +991,7 @@
       "id": "mmkpglx71x86zlz0347",
       "data": "2026-03-10",
       "cat": "SHOPPE",
-      "desc": "Entremeio espÃ­rito santo",
+      "desc": "Entremeio espírito santo",
       "valor": 22
     },
     {
@@ -1055,7 +1055,7 @@
     },
     {
       "id": "mmjatvvajvv9w4zwqte",
-      "conta": "ÃGUA",
+      "conta": "ÁGUA",
       "valor": 73.2
     },
     {
