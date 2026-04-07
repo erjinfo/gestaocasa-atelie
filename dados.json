@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-04-07T23:18:58.125Z",
+  "salvoEm": "2026-04-07T23:21:43.288Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -685,6 +685,20 @@
         }
       ],
       "total": 20
+    },
+    {
+      "id": "mnp8u2nito1hdwt5m3l",
+      "data": "2026-04-07",
+      "cliente": "Nidia corretora",
+      "tel": "",
+      "itens": [
+        {
+          "modelo": "Terço infantil com nome branco com nossa senhora ",
+          "valor": 40,
+          "qty": 1
+        }
+      ],
+      "total": 40
     }
   ],
   "gastos": [
