@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-04-07T23:17:12.029Z",
+  "salvoEm": "2026-04-07T23:17:30.992Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -1082,11 +1082,6 @@
       "id": "mnp8n4jrrc56bvv6o4d",
       "conta": "FATURA PATY",
       "valor": 2325
-    },
-    {
-      "id": "mnp8o9ch7pm9bo0qog",
-      "conta": "MÃO DE OBRA IRINEU",
-      "valor": 3500
     }
   ]
 }
