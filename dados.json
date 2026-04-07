@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-04-07T23:18:24.244Z",
+  "salvoEm": "2026-04-07T23:18:58.125Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -685,25 +685,6 @@
         }
       ],
       "total": 20
-    },
-    {
-      "id": "mmgpl5tnzhixok7863",
-      "data": "2026-03-07",
-      "cliente": "Maria Aparecida (botÃÂ¢nico)",
-      "tel": "16997975228",
-      "itens": [
-        {
-          "modelo": "TerÃÂ§o pÃÂ©rola espÃÂ­rito santo ",
-          "valor": 35,
-          "qty": 1
-        },
-        {
-          "modelo": "TerÃÂ§o compacto SÃÂ£o Miguel preto e prata",
-          "valor": 20,
-          "qty": 1
-        }
-      ],
-      "total": 55
     }
   ],
   "gastos": [
