@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-04-12T11:32:52.120Z",
+  "salvoEm": "2026-04-12T11:33:45.290Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -713,6 +713,20 @@
         }
       ],
       "total": 35
+    },
+    {
+      "id": "mnvoqvr4y4daa0470w",
+      "data": "2026-04-12",
+      "cliente": "Bianca CMPS",
+      "tel": "",
+      "itens": [
+        {
+          "modelo": "Terço Premium com nome Anjo da guarda e pedras fruta cor rosa",
+          "valor": 40,
+          "qty": 2
+        }
+      ],
+      "total": 80
     }
   ],
   "gastos": [
