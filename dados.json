@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-04-26T17:45:52.246Z",
+  "salvoEm": "2026-04-26T17:47:15.436Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -741,6 +741,30 @@
         }
       ],
       "total": 120
+    },
+    {
+      "id": "mog294v5t8b4u72b6v8",
+      "data": "2026-04-26",
+      "cliente": "Carmem",
+      "tel": "",
+      "itens": [
+        {
+          "modelo": "Terço 6mm dourado",
+          "valor": 20,
+          "qty": 5
+        },
+        {
+          "modelo": "Terço Luxo Nossa Senhora Aparecida Perola",
+          "valor": 45,
+          "qty": 1
+        },
+        {
+          "modelo": "Terço Compacto Santa Terezinha ",
+          "valor": 20,
+          "qty": 1
+        }
+      ],
+      "total": 165
     }
   ],
   "gastos": [
