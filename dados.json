@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-04-26T17:47:15.436Z",
+  "salvoEm": "2026-04-26T17:49:48.655Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -765,6 +765,25 @@
         }
       ],
       "total": 165
+    },
+    {
+      "id": "mog2cf38icom0ov8lv",
+      "data": "2026-04-26",
+      "cliente": "D. Rosa",
+      "tel": "",
+      "itens": [
+        {
+          "modelo": "Terço Jesus misericórdioso rosa e Azul",
+          "valor": 30,
+          "qty": 1
+        },
+        {
+          "modelo": "Terço pulseira rosa e Azul ",
+          "valor": 20,
+          "qty": 1
+        }
+      ],
+      "total": 50
     }
   ],
   "gastos": [
