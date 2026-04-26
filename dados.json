@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-04-26T17:44:56.280Z",
+  "salvoEm": "2026-04-26T17:45:52.246Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -727,6 +727,20 @@
         }
       ],
       "total": 80
+    },
+    {
+      "id": "mog27cob1o3zaf4dpt9",
+      "data": "2026-04-26",
+      "cliente": "Ana Nuvyon",
+      "tel": "",
+      "itens": [
+        {
+          "modelo": "Terço Premium Rosa Fruta Cor, com nome",
+          "valor": 40,
+          "qty": 3
+        }
+      ],
+      "total": 120
     }
   ],
   "gastos": [
