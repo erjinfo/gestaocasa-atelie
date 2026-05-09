@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-05-09T09:54:22.633Z",
+  "salvoEm": "2026-05-09T09:54:35.443Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -1146,11 +1146,6 @@
       "id": "mmjatvvajvv9w4zwqte",
       "conta": "ÁGUA",
       "valor": 73.2
-    },
-    {
-      "id": "mmjau913la6njg2e1oo",
-      "conta": "LUZ",
-      "valor": 125
     },
     {
       "id": "mmjaujszkirfdil04w",
