@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-05-09T09:55:34.284Z",
+  "salvoEm": "2026-05-09T09:56:06.179Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -1186,6 +1186,11 @@
       "id": "moy64m823p1ggamcz1l",
       "conta": "SERRALHEIRO CHÁCARA",
       "valor": 400
+    },
+    {
+      "id": "moy65au2ujz2l2fixro",
+      "conta": "PINTURA CHACARA",
+      "valor": 3500
     }
   ]
 }
