@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-05-09T09:55:17.627Z",
+  "salvoEm": "2026-05-09T09:55:34.284Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -1181,6 +1181,11 @@
       "id": "moy649dewbbkbvy5s6j",
       "conta": "GRADE PARA CHÁCARA",
       "valor": 600
+    },
+    {
+      "id": "moy64m823p1ggamcz1l",
+      "conta": "SERRALHEIRO CHÁCARA",
+      "valor": 400
     }
   ]
 }
