@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-05-09T09:56:26.456Z",
+  "salvoEm": "2026-05-09T09:56:57.163Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -1196,6 +1196,11 @@
       "id": "moy65qhcj0jrzcb6d18",
       "conta": "PINTURA GARAGEM E QUARTOS CHÁCARA",
       "valor": 1300
+    },
+    {
+      "id": "moy66e6a7dt11pb4uku",
+      "conta": "TINTAS PARA CHACARA",
+      "valor": 500
     }
   ]
 }
