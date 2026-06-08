@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-06-08T14:28:11.392Z",
+  "salvoEm": "2026-06-08T14:28:37.414Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -1201,6 +1201,11 @@
       "id": "mq5b2rg43652djac5g4",
       "conta": "FATURA PATY",
       "valor": 1285
+    },
+    {
+      "id": "mq5b3bj1qz569gq6qdi",
+      "conta": "ELIEZER",
+      "valor": 1200
     }
   ]
 }
