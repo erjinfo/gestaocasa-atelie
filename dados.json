@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-06-08T14:26:43.258Z",
+  "salvoEm": "2026-06-08T14:27:07.841Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -1161,11 +1161,6 @@
       "id": "mmjav2ku7wlzchistg",
       "conta": "FAXINA",
       "valor": 150
-    },
-    {
-      "id": "mnp8n4jrrc56bvv6o4d",
-      "conta": "FATURA PATY",
-      "valor": 2325
     },
     {
       "id": "moy63o4dli93nsq8fh8",
