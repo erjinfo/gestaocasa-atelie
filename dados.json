@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-07-09T18:08:50.319Z",
+  "salvoEm": "2026-07-09T18:08:57.156Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -1195,6 +1195,11 @@
     {
       "id": "mrdtlxc6a7l3waedx4",
       "conta": "LICENCIAMENTO CARRO",
+      "valor": 195
+    },
+    {
+      "id": "mrdtm2m3zbrxeh6hwr",
+      "conta": "LICENCIAMENTO MOTO",
       "valor": 195
     }
   ]
