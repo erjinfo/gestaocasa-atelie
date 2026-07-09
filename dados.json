@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-07-09T18:08:57.156Z",
+  "salvoEm": "2026-07-09T18:09:06.326Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -1176,16 +1176,6 @@
       "id": "moy66e6a7dt11pb4uku",
       "conta": "TINTAS PARA CHACARA",
       "valor": 500
-    },
-    {
-      "id": "mq5b0vg1hb4d4oxqm57",
-      "conta": "FATURA ERIC",
-      "valor": 1700
-    },
-    {
-      "id": "mq5b2rg43652djac5g4",
-      "conta": "FATURA PATY",
-      "valor": 1285
     },
     {
       "id": "mq5b3bj1qz569gq6qdi",
