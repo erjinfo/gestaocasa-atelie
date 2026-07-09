@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-07-09T18:09:30.155Z",
+  "salvoEm": "2026-07-09T18:09:40.587Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -1196,6 +1196,11 @@
       "id": "mrdtms2qcsd1t6m3z7l",
       "conta": "FATURA ERIC",
       "valor": 1300
+    },
+    {
+      "id": "mrdtn04i4opu9vvupz6",
+      "conta": "FATURA PATY",
+      "valor": 500
     }
   ]
 }
