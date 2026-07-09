@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-07-09T18:08:05.234Z",
+  "salvoEm": "2026-07-09T18:08:14.897Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -1156,11 +1156,6 @@
       "id": "moy63o4dli93nsq8fh8",
       "conta": "LUZ",
       "valor": 142
-    },
-    {
-      "id": "moy649dewbbkbvy5s6j",
-      "conta": "GRADE PARA CHÁCARA",
-      "valor": 600
     },
     {
       "id": "moy64m823p1ggamcz1l",
