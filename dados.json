@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-07-09T18:07:49.056Z",
+  "salvoEm": "2026-07-09T18:08:05.234Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -1106,16 +1106,6 @@
       "id": "mmjao10x8g1kkrmiax3",
       "conta": "CLARO ERIC",
       "valor": 43
-    },
-    {
-      "id": "mmjaqomoo64t9l6zrf",
-      "conta": "IPVA CARRO",
-      "valor": 465.56
-    },
-    {
-      "id": "mmjaqv9tde7syzzzsat",
-      "conta": "IPVA MOTO",
-      "valor": 157
     },
     {
       "id": "mmjaru8m0as2tha4k9d8",
