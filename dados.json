@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-07-09T18:08:14.897Z",
+  "salvoEm": "2026-07-09T18:08:50.319Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -1191,6 +1191,11 @@
       "id": "mq5b3bj1qz569gq6qdi",
       "conta": "ELIEZER",
       "valor": 1200
+    },
+    {
+      "id": "mrdtlxc6a7l3waedx4",
+      "conta": "LICENCIAMENTO CARRO",
+      "valor": 195
     }
   ]
 }
