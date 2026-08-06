@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-08-06T23:24:07.896Z",
+  "salvoEm": "2026-08-06T23:24:24.586Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -1176,6 +1176,11 @@
       "id": "moy66e6a7dt11pb4uku",
       "conta": "TINTAS PARA CHACARA",
       "valor": 500
+    },
+    {
+      "id": "msi57ls0z20ka4fl1sb",
+      "conta": "FATURA ERIC",
+      "valor": 920
     }
   ]
 }
