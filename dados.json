@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-08-06T23:23:13.473Z",
+  "salvoEm": "2026-08-06T23:23:32.590Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -1176,21 +1176,6 @@
       "id": "moy66e6a7dt11pb4uku",
       "conta": "TINTAS PARA CHACARA",
       "valor": 500
-    },
-    {
-      "id": "mq5b3bj1qz569gq6qdi",
-      "conta": "ELIEZER",
-      "valor": 1200
-    },
-    {
-      "id": "mrdtlxc6a7l3waedx4",
-      "conta": "LICENCIAMENTO CARRO",
-      "valor": 195
-    },
-    {
-      "id": "mrdtm2m3zbrxeh6hwr",
-      "conta": "LICENCIAMENTO MOTO",
-      "valor": 195
     },
     {
       "id": "mrdtms2qcsd1t6m3z7l",
