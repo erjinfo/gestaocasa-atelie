@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-09-09T15:16:06.665Z",
+  "salvoEm": "2026-09-09T15:16:21.827Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -1186,6 +1186,11 @@
       "id": "mtu8qm0t2ndw4d10dty",
       "conta": "ÁGUA CHÁCARA",
       "valor": 50
+    },
+    {
+      "id": "mtu8qxq2nb4bcd4vks",
+      "conta": "LUZ CHACARA",
+      "valor": 100
     }
   ]
 }
