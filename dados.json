@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-09-09T15:14:25.786Z",
+  "salvoEm": "2026-09-09T15:15:00.879Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -1176,6 +1176,11 @@
       "id": "mtu8og6pneiey5jcvda",
       "conta": "CONDOMÍNIO PALMEIRINHA",
       "valor": 280
+    },
+    {
+      "id": "mtu8p79i1iv490dyl2y",
+      "conta": "PARCELA CHÁCARA",
+      "valor": 4350
     }
   ]
 }
