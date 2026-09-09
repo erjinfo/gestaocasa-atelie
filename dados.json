@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-09-09T15:15:00.879Z",
+  "salvoEm": "2026-09-09T15:16:06.665Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -1181,6 +1181,11 @@
       "id": "mtu8p79i1iv490dyl2y",
       "conta": "PARCELA CHÁCARA",
       "valor": 4350
+    },
+    {
+      "id": "mtu8qm0t2ndw4d10dty",
+      "conta": "ÁGUA CHÁCARA",
+      "valor": 50
     }
   ]
 }
