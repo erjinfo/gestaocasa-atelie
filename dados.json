@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-09-09T15:13:11.907Z",
+  "salvoEm": "2026-09-09T15:13:52.100Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -1166,6 +1166,11 @@
       "id": "msi59wo8wot8dri9s7s",
       "conta": "CONDOMÍNIO PALMEIRINHA",
       "valor": 250
+    },
+    {
+      "id": "mtu8nq6zu0vnhuoo97j",
+      "conta": "FATURA PATY",
+      "valor": 180
     }
   ]
 }
