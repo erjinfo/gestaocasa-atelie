@@ -1,6 +1,6 @@
 {
   "versao": "1.0",
-  "salvoEm": "2026-09-09T15:14:11.391Z",
+  "salvoEm": "2026-09-09T15:14:25.786Z",
   "vendas": [
     {
       "id": "mmg9sonyjurd0wi0dl",
@@ -1171,6 +1171,11 @@
       "id": "mtu8nvvnrgv64pn6x6q",
       "conta": "FATURA ERIC",
       "valor": 1600
+    },
+    {
+      "id": "mtu8og6pneiey5jcvda",
+      "conta": "CONDOMÍNIO PALMEIRINHA",
+      "valor": 280
     }
   ]
 }
